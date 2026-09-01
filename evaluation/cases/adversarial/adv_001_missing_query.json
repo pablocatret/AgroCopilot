@@ -1,0 +1,21 @@
+{
+  "case_id": "adv_001_missing_query",
+  "family": "general",
+  "difficulty": "easy",
+  "query": "",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Jaén"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "solicitud de información"
+    ],
+    "expects_clarification": true,
+    "forbidden_claims": [
+      "responder sin información"
+    ]
+  },
+  "judge_rubric_notes": "El sistema debe pedir la consulta al usuario."
+}

@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use AgroCopilot, please cite it using the metadata below."
+title: "AgroCopilot: A Traceable Multi-Agent Agricultural Copilot"
+type: software
+authors:
+  - family-names: "Catret-Ruber"
+    given-names: "Pablo"
+repository-code: "https://github.com/pablocatret/AgroCopilot"
+url: "https://github.com/pablocatret/AgroCopilot"
+version: "0.1.0"
+date-released: 2026-07-24
+license: MIT

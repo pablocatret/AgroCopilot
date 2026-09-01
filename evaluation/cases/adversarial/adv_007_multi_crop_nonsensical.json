@@ -1,0 +1,32 @@
+{
+  "case_id": "adv_007_multi_crop_nonsensical",
+  "family": "general",
+  "difficulty": "medium",
+  "query": "¿Puedo plantar arroz en mi olivar de montaña en Teruel? Tengo 5 hectáreas y el olivo no va bien.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Teruel"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "incompatibilidad de cultivos",
+      "condiciones edafoclimáticas",
+      "alternativas viables"
+    ],
+    "must_mention_facts": [
+      "arroz necesita inundación",
+      "olivar de montaña en clima continental",
+      "la viabilidad del arroz en Teruel depende de agua disponible, temperatura, suelo, topografía y regulación local"
+    ],
+    "must_actions": [
+      "evaluar causas del bajo rendimiento del olivar",
+      "considerar alternativas adaptadas al clima",
+      "consultar con técnico agrícola"
+    ],
+    "forbidden_claims": [
+      "arroz viable en Teruel"
+    ]
+  },
+  "judge_rubric_notes": "El sistema debe explicar qué requisitos necesita el arroz y contrastarlos con las condiciones concretas de la finca, sin afirmar de forma absoluta que Teruel no puede cultivar arroz. Debe ofrecer alternativas realistas si el balance de agua, clima, suelo o economía no resulta favorable."
+}

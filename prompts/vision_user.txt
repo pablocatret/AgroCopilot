@@ -1,0 +1,20 @@
+Analyze the image(s) provided in context.
+
+# INPUTS
+
+- User query: {{ query }}
+- Decision mode: {{ decision_mode }}
+- Memory summary: {{ memory_summary }}
+- Extracted context: {{ extracted_context }}
+
+# INSTRUCTIONS
+
+1. Perform OCR and visual analysis on the image(s) following your system instructions.
+2. Address the user query directly using only what is visible in the image(s) or explicitly provided in context.
+3. If the query asks for identification of a pest, disease, or condition, provide your visual observations and clearly state confidence level and any alternative interpretations.
+4. If the query asks for a decision and the image is insufficient for reliable analysis, state what is missing before providing any interpretation.
+5. Respect decision_mode: if set to "safe", err on the side of caution and flag all uncertainties; if set to "standard", provide analysis with appropriate confidence levels.
+
+# OUTPUT
+
+Return your response as the JSON structure defined in your system instructions. Include all sections: image_analysis, findings, and recommendations.

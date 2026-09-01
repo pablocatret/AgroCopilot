@@ -1,0 +1,54 @@
+{
+  "models": {
+    "qwen3-4b": {
+      "provider": "openrouter",
+      "model_id": "mistralai/ministral-8b-2512",
+      "role": "both",
+      "temperature": 0.0,
+      "max_tokens": null,
+      "vision_model_id": "mistralai/ministral-8b-2512",
+      "vision_provider": "openrouter"
+    },
+    "deepseek-v4-flash": {
+      "provider": "openrouter",
+      "model_id": "deepseek/deepseek-v4-flash",
+      "role": "both",
+      "temperature": 0.0,
+      "max_tokens": null,
+      "vision_model_id": "qwen/qwen3.6-flash",
+      "vision_provider": "openrouter"
+    }
+  },
+  "judges": [
+    {
+      "name": "mimo-v2.5",
+      "model": "xiaomi/mimo-v2.5",
+      "provider": "openrouter",
+      "max_tokens": 8192,
+      "reasoning_enabled": false
+    },
+    {
+      "name": "hy3-preview",
+      "model": "tencent/hy3-preview",
+      "provider": "openrouter",
+      "max_tokens": 8192,
+      "reasoning_enabled": true
+    },
+    {
+      "name": "step-3.7-flash",
+      "model": "stepfun/step-3.7-flash",
+      "provider": "openrouter",
+      "max_tokens": 12288,
+      "reasoning_enabled": true
+    }
+  ],
+  "budget_usd": 10.0,
+  "runs_per_case": 1,
+  "temperature": 0.0,
+  "max_concurrent": 8,
+  "corpus_path": "evaluation/cases/seed,evaluation/cases/adversarial",
+  "adversarial_path": "evaluation/cases/adversarial",
+  "output_path": "evaluation/results/sondeo_barato",
+  "eval_stage": "full",
+  "max_cases": null
+}

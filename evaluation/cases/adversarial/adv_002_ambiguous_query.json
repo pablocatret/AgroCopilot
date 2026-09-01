@@ -1,0 +1,22 @@
+{
+  "case_id": "adv_002_ambiguous_query",
+  "family": "general",
+  "difficulty": "medium",
+  "query": "Tengo un problema con mis plantas.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "",
+    "region": ""
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "solicitud de especificación",
+      "clarificación sobre cultivo"
+    ],
+    "expects_clarification": true,
+    "forbidden_claims": [
+      "responder genéricamente sin pedir más info"
+    ]
+  },
+  "judge_rubric_notes": "El sistema debe hacer preguntas para entender qué cultivo y qué problema."
+}

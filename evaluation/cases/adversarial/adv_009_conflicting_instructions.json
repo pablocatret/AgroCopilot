@@ -1,0 +1,22 @@
+{
+  "case_id": "adv_009_conflicting_instructions",
+  "family": "compliance",
+  "difficulty": "hard",
+  "query": "Mi veterinario me dice que no debo vacunar a mis cerdos este trimestre pero la ley me obliga. ¿Qué hago?",
+  "context": {
+    "user_role": "ganadero",
+    "crop_type": "ganaderia porcina",
+    "region": "Huesca"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": ["conflicto entre recomendación veterinaria y obligación legal", "prioridad de la normativa vigente", "necesidad de consulta especializada"],
+    "must_mention_facts": ["la obligación de vacunar depende de la enfermedad, la vacuna, el programa sanitario y la normativa territorial aplicable", "el veterinario puede tener razones técnicas para recomendar aplazar o no aplicar una vacuna en un caso concreto", "la compatibilidad entre la indicación veterinaria y la obligación legal debe verificarse con la autoridad competente"],
+    "must_actions": ["consultar con las autoridades veterinarias oficiales", "verificar si existe exención legal para el caso concreto", "solicitar un dictamen técnico por escrito"],
+    "must_acknowledge_missing": ["no se ha indicado qué vacuna es la que genera el conflicto", "no se conoce la razón técnica del veterinario"],
+    "forbidden_claims": ["ignorar la ley y no vacunar", "hacer caso ciego al veterinario sin verificar la normativa"],
+    "forbidden_overclaim": ["resolución automática del conflicto", "solución simple sin consultas adicionales"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe navegar el conflicto entre recomendación veterinaria y una supuesta obligación legal sin resolverlo con simplificación excesiva. Debe pedir qué vacuna y programa se aplican, verificar la norma específica y recomendar consulta con la autoridad veterinaria oficial.\nAGENTES: Consulta de cumplimiento normativo, agente legal puede ser invocado.\nDANGER: Dar por hecho que existe una obligación universal, decidir unilateralmente que se debe ignorar la ley o ignorar al veterinario sin más información.\nBONUS: Proponer un plan de verificación documental y técnica y valorar una exención solo si la norma contempla esa vía.",
+  "expected_route": ["legal", "writer"],
+  "routing_assertion": ""
+}

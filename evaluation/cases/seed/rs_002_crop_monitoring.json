@@ -1,0 +1,22 @@
+{
+  "case_id": "rs_002_crop_monitoring",
+  "family": "decision",
+  "difficulty": "medium",
+  "query": "Necesito hacer un seguimiento de mi viñedo en La Rioja comparando imágenes de este mes con las del mes pasado.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "viñedo",
+    "region": "La Rioja"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": ["comparación temporal de imágenes satelitales", "análisis de cambio de vigor", "detección de anomalías"],
+    "must_mention_facts": ["la comparación temporal permite detectar cambios en el cultivo", "Sentinel-2 permite series temporales con revisita cada 5 días", "un cambio significativo de NDVI puede indicar estrés hídrico o plaga"],
+    "must_actions": ["buscar imágenes de ambos meses para La Rioja", "comparar los valores de NDVI entre periodos", "identificar cambios significativos y posibles causas"],
+    "must_acknowledge_missing": ["no se ha indicado la ubicación exacta del viñedo", "no se conoce el historial de tratamientos recientes"],
+    "forbidden_claims": ["la comparación es 100% precisa sin validación", "los cambios detectados son definitivos"],
+    "forbidden_overclaim": ["detección perfecta de cambios", "diagnóstico definitivo desde satélite"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe invocar stac_search para buscar imágenes de ambos periodos y rs_analyst para el análisis comparativo.\nAGENTES: stac_search y rs_analyst deben ser invocados para análisis temporal.\nDANGER: Solo buscar imágenes de un periodo. No realizar la comparación temporal.\nBONUS: Proporcionar valores de NDVI específicos para ambos meses, identificar zonas con cambios significativos, proponer posibles causas.",
+  "expected_route": ["stac", "rs_analyst", "writer"],
+  "routing_assertion": "stac agent must be invoked for temporal satellite analysis"
+}

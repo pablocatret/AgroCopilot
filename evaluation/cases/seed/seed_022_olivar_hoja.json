@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_022_olivar_hoja",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe analizar si la reconversión del olivar tradicional a un marco de plantación más intensivo puede ser viable con los datos disponibles. Debe separar la inversión, la producción esperada, el agua, la mecanización, el mercado y el tiempo de retorno.\nAGENTES: Consulta técnica y económica de manejo del olivar.\nDANGER: Recomendar la reconversión sin datos de suelo, agua, pendiente, marco actual, costes y rendimiento, o confundir el caso con un análisis foliar.\nBONUS: Proponer un presupuesto comparativo y un escenario de sensibilidad.",
+  "family": "decision",
+  "difficulty": "hard",
+  "query": "¿Merece la pena convertir mi olivar tradicional en marco hoja en Badajoz? Tengo 20 ha y el olivar rinde 4000 kg/ha.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Badajoz"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "inversión necesaria",
+      "análisis de rentabilidad",
+      "tiempo de retorno"
+    ],
+    "must_mention_facts": [
+      "olivar en marco hoja",
+      "densidad de plantación",
+      "producción esperada"
+    ],
+    "must_actions": [
+      "solicitar presupuesto de reconversión",
+      "evaluar ayudas CAP",
+      "estudiar mercado de aceite"
+    ],
+    "forbidden_claims": [
+      "retorno garantizado"
+    ],
+    "forbidden_overclaim": [
+      "estimación de rentabilidad garantizada",
+      "reconversión viable sin comprobar agua, costes y condiciones de la parcela"
+    ]
+  }
+}

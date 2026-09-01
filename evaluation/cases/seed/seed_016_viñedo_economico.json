@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_016_viñedo_economico",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe analizar la viabilidad económica del viñedo en Jerez, considerando costes de producción y precios de mercado.\nAGENTES: Consulta de decisión económica.\nDANGER: Ignorar los factores económicos y solo dar recomendaciones técnicas.\nBONUS: Mencionar costes estimados por hectárea, márgenes de beneficio, o la importancia de la denominación de origen.",
+  "family": "decision",
+  "difficulty": "medium",
+  "query": "¿Compensa invertir en defoliación mecánica para mi viñedo? Tengo 15 ha en Jerez y el coste es de 150€/ha.",
+  "context": {
+    "user_role": "viticultor",
+    "crop_type": "viñedo",
+    "region": "Jerez"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "análisis coste-beneficio",
+      "impacto en calidad",
+      "alternativas"
+    ],
+    "must_mention_facts": [
+      "defoliación mecánica",
+      "coste por hectárea",
+      "mejora de maduración"
+    ],
+    "must_actions": [
+      "evaluar zona de copa",
+      "comparar con déficit hídrico controlado",
+      "solicitar presupuestos"
+    ],
+    "forbidden_claims": [
+      "garantía de resultado"
+    ],
+    "forbidden_overclaim": [
+      "rentabilidad garantizada del viñedo",
+      "sin riesgo económico en viticultura"
+    ]
+  }
+}

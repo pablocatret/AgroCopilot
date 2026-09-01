@@ -1,0 +1,34 @@
+{
+  "case_id": "mt_002_treatment_question",
+  "family": "diagnosis",
+  "difficulty": "medium",
+  "is_multiturn": true,
+  "query": "Mi viñedo tiene oídio y ya apliqué azufre dos veces.",
+  "turns": [
+    {
+      "turn": 1,
+      "query": "Mi viñedo tiene oídio y ya apliqué azufre dos veces.",
+      "expected_behavior": "identify_resistance_issue",
+      "gold_expectations": {
+        "must_contain_concepts": ["resistencia al azufre", "alternativas de tratamiento"],
+        "must_mention_facts": ["el oídio puede desarrollar resistencia al azufre", "existen alternativas como bicarbonato o potasio"],
+        "must_actions": ["evaluar eficacia del tratamiento actual", "proponer alternativas"]
+      }
+    },
+    {
+      "turn": 2,
+      "query": "¿Puedo usar potasio en el mismo tratamiento que el azufre?",
+      "expected_behavior": "answer_compatibility",
+      "gold_expectations": {
+        "must_contain_concepts": ["compatibilidad de productos", "mezclas permitidas"],
+        "must_mention_facts": ["la compatibilidad depende de la formulación concreta y de la etiqueta del producto", "no debe asumirse que una mezcla de potasio y azufre es segura"],
+        "must_actions": ["confirmar compatibilidad en la etiqueta y, si procede, con el fabricante o técnico", "no fijar una dosis sin identificar el producto y su etiqueta"]
+      }
+    }
+  ],
+  "gold_expectations": {},
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe mantener el contexto del viñedo con oídio y responder la pregunta sobre compatibilidad de productos.\nAGENTES: Consulta técnica de fitosanitarios.\nDANGER: No recordar que el usuario ya mencionó oídio y azufre. Responder de forma genérica sin considerar el historial.\nBONUS: Referirse al tratamiento previo y proporcionar una recomendación integrada.",
+  "expected_route": ["free", "writer"],
+  "optional_route": ["free"],
+  "routing_assertion": ""
+}

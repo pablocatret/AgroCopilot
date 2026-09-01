@@ -1,0 +1,32 @@
+{
+  "case_id": "adv_006_regional_spanish",
+  "family": "diagnosis",
+  "difficulty": "medium",
+  "query": "Tengo un huerito de naranjos y les han salido unes bichas raras pela hoja. Están como blanquinosas y si las tocas se caen. ¿Que les pongo pa ke se las quite?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "cítricos",
+    "region": "Murcia"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "identificación de plaga",
+      "control biológico o químico",
+      "prácticas culturales"
+    ],
+    "must_mention_facts": [
+      "posible cochinilla o pulgón",
+      "cítricos",
+      "tratamiento fitosanitario autorizado"
+    ],
+    "must_actions": [
+      "identificar la plaga exacta",
+      "consultar técnico agrícola",
+      "aplicar tratamiento autorizado"
+    ],
+    "forbidden_claims": [
+      "cualquier pesticida sirve"
+    ]
+  },
+  "judge_rubric_notes": "El sistema debe entender el español coloquial campesino y dar una respuesta clara y útil."
+}

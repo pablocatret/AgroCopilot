@@ -1,0 +1,31 @@
+<user_query>
+{{ query }}
+</user_query>
+
+<available_context>
+{{ context }}
+</available_context>
+
+<instructions>
+Analyze the available context and produce a structured legal assessment:
+
+1. Identify probably applicable requirements and their jurisdiction / current status where stated.
+2. Classify each finding by evidence tier:
+   - confirmed_source
+   - reasonable_indication
+   - insufficient_documentation
+   - pending_verification
+3. Use metadata (source_status, updated_at, article, jurisdiction) to calibrate confidence for each finding.
+4. State practical implications for farm operations, certification dossiers, or traceability.
+5. List documents or verifications that `writer` should retain or flag.
+6. If the corpus lacks sufficient evidence, indicate what a web search or official verification would need to cover.
+
+Do NOT:
+- Add fabricated URLs or inline reference numbers.
+- Claim definitive legal conclusions.
+- Mark compliance unless explicitly supported by user declaration or document.
+</instructions>
+
+<output>
+Return ONLY a valid JSON object with fields `answer` (string) and `references` (array of objects with title, url, snippet).
+</output>

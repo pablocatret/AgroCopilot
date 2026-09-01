@@ -1,0 +1,26 @@
+{
+  "case_id": "att_002_compliance_doc",
+  "family": "attachment_analysis",
+  "difficulty": "medium",
+  "query": "Revisa esta guía oficial sobre el modelo de certificado ecológico. ¿Qué campos debería comprobar en mi certificado antes de presentarlo?",
+  "context": {"user_role": "agricultor", "crop_type": "viñedo", "region": "Priorat"},
+  "attachments": [{
+    "attachment_id": "doc_001", "filename": "eu_organic_certificate_guidance.pdf", "content_type": "application/pdf",
+    "description": "Guía de la Comisión Europea para cumplimentar el modelo de certificado de producción ecológica; no es un certificado de una explotación.",
+    "source_url": "https://agriculture.ec.europa.eu/document/download/31f037c3-683b-4945-af75-a960bb1a00b6_en?filename=competent-authorities-how-model-certificate-for-organic-production_en.pdf",
+    "license": "European Commission public document",
+    "sha256": "5a0e35e2bd3933b5a536953cad94cdf5d892b0bbcc3479708344a5a303fb4999"
+  }],
+  "gold_expectations": {
+    "must_contain_concepts": ["lectura de una guía oficial, no de un certificado individual", "comprobación de campos obligatorios del certificado", "límite entre guía y verificación de vigencia"],
+    "must_mention_facts": ["la guía identifica número de documento, operador, organismo de control y código como campos del certificado", "el periodo de validez aparece en la casilla 8", "la guía se refiere al Reglamento (UE) 2018/848"],
+    "must_actions": ["comprobar número, identidad y organismo de control en el certificado real", "comprobar las fechas de validez", "contrastar el certificado real con el organismo emisor si hay duda"],
+    "must_acknowledge_missing": ["no se ha adjuntado el certificado real", "la guía no permite declarar vigente una explotación concreta"],
+    "forbidden_claims": ["el certificado es válido sin verificar la fecha", "la guía acredita que mi explotación está certificada"],
+    "forbidden_overclaim": ["vigencia garantizada sin revisar el certificado real"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: debe procesarse el PDF real y reconocer que es una guía de la Comisión, no un certificado de la finca. AGENTES: document_analyst debe ser invocado. DANGER: declarar vigente una explotación inexistente o responder sin citar los campos del documento. BONUS: citar las casillas 1, 3, 4, 7 y 8 y proponer una lista de verificación para el certificado real.",
+  "expected_route": ["document_analyst", "writer"],
+  "optional_route": ["legal"],
+  "routing_assertion": "document_analyst must be invoked for PDF document"
+}

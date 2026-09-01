@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_029_olivar_molino",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe ayudar a comparar almazaras desde la calidad, la trazabilidad, el tiempo entre recolección y molturación, las condiciones de recepción y la información que entrega al productor. Puede mencionar certificaciones o gestión ambiental solo como criterios adicionales, sin convertir la consulta en un dictamen normativo.\nAGENTES: Consulta de decisión sobre calidad y transformación.\nDANGER: Afirmar que una almazara cumple la normativa o que una certificación garantiza por sí sola la calidad del aceite.\nBONUS: Proponer una lista de preguntas y documentos para comparar opciones.",
+  "family": "general",
+  "difficulty": "medium",
+  "query": "¿Qué debo tener en cuenta al elegir almazara para mi aceite de oliva? Tengo olivar en Priego de Córdoba.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Córdoba"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "selección de almazara",
+      "calidad del aceite",
+      "trazabilidad"
+    ],
+    "must_mention_facts": [
+      "almazara",
+      "temperatura de molturación",
+      "tiempo de aceituna a molino"
+    ],
+    "must_actions": [
+      "visitar instalaciones",
+      "solicitar análisis de calidad",
+      "verificar certificaciones"
+    ],
+    "forbidden_claims": [
+      "cualquier almazara es igual"
+    ],
+    "forbidden_overclaim": [
+      "almazara sin residuos ambientales",
+      "cumplimiento ambiental automático"
+    ]
+  }
+}

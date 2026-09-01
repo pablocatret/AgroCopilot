@@ -1,0 +1,34 @@
+{
+  "case_id": "mt_005_decision_context_shift",
+  "family": "decision",
+  "difficulty": "hard",
+  "is_multiturn": true,
+  "query": "¿Debo invertir en riego por goteo o mantener el secano para mi olivar?",
+  "turns": [
+    {
+      "turn": 1,
+      "query": "¿Debo invertir en riego por goteo o mantener el secano para mi olivar?",
+      "expected_behavior": "analyze_tradeoffs",
+      "gold_expectations": {
+        "must_contain_concepts": ["análisis de trade-offs", "factores económicos y técnicos"],
+        "must_mention_facts": ["el riego por goteo aumenta la producción pero tiene coste de inversión", "el secano tiene menor coste pero también menor rendimiento"],
+        "must_actions": ["evaluar coste-beneficio", "considerar condiciones locales"]
+      }
+    },
+    {
+      "turn": 2,
+      "query": "Ahora me han ofrecido una subvención para riego. ¿Cambia algo?",
+      "expected_behavior": "update_recommendation",
+      "gold_expectations": {
+        "must_contain_concepts": ["actualización de recomendación", "impacto de subvención en viabilidad económica"],
+        "must_mention_facts": ["una subvención puede reducir el coste neto de inversión si se concede y se cumplen sus condiciones", "el efecto sobre el periodo de retorno debe calcularse con el importe, los plazos, los costes y los beneficios esperados"],
+        "must_actions": ["recalcular el análisis coste-beneficio", "verificar condiciones de la subvención"]
+      }
+    }
+  ],
+  "gold_expectations": {},
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe adaptar su recomendación considerando la nueva información económica (subvención), pero no debe asumir que la subvención se concede ni que cambia significativamente el periodo de retorno sin datos.\nAGENTES: Consulta de decisión económica-agronómica.\nDANGER: Mantener la misma recomendación sin considerar la subvención o presentar un cálculo inventado.\nBONUS: Proponer una fórmula o escenario de sensibilidad para recalcular el periodo de retorno cuando se conozcan las condiciones.",
+  "expected_route": ["free", "writer"],
+  "optional_route": ["free"],
+  "routing_assertion": ""
+}

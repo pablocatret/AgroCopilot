@@ -1,0 +1,34 @@
+{
+  "case_id": "mt_006_ambiguous_followup",
+  "family": "general",
+  "difficulty": "medium",
+  "is_multiturn": true,
+  "query": "Tengo un problema con mis naves porcinas en Huesca.",
+  "turns": [
+    {
+      "turn": 1,
+      "query": "Tengo un problema con mis naves porcinas en Huesca.",
+      "expected_behavior": "ask_for_clarification",
+      "gold_expectations": {
+        "must_contain_concepts": ["solicitud de información", "identificación del problema"],
+        "must_actions": ["preguntar por el tipo de problema", "solicitar más detalles"],
+        "expects_clarification": true
+      }
+    },
+    {
+      "turn": 2,
+      "query": "Lo de antes.",
+      "expected_behavior": "interpret_ambiguous_reference",
+      "gold_expectations": {
+        "must_contain_concepts": ["interpretación de referencia ambigua", "mantenimiento de contexto"],
+        "must_mention_facts": ["el usuario se refiere al problema de las naves porcinas", "Huesca es la ubicación de la explotación"],
+        "must_actions": ["interpretar 'lo de antes' como el problema de naves porcinas", "solicitar detalles específicos del problema"]
+      }
+    }
+  ],
+  "gold_expectations": {},
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe interpretar correctamente 'lo de antes' como una referencia al problema de naves porcinas mencionado en el turno anterior.\nAGENTES: Consulta general con potencial de seguimiento.\nDANGER: No interpretar la referencia ambigua. Responder como si fuera una nueva consulta sin contexto.\nBONUS: Demostrar comprensión de la referencia ambigua y solicitar detalles específicos sobre el problema de naves porcinas.",
+  "expected_route": ["free", "writer"],
+  "optional_route": ["free"],
+  "routing_assertion": ""
+}

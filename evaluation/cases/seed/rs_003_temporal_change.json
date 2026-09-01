@@ -1,0 +1,22 @@
+{
+  "case_id": "rs_003_temporal_change",
+  "family": "decision",
+  "difficulty": "hard",
+  "query": "¿Ha habido algún cambio significativo en la cobertura vegetal de mi finca entre enero y junio? Tengo 30 hectáreas de olivar en Córdoba.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Córdoba"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": ["detección de cambios en cobertura vegetal", "análisis de serie temporal", "NDVI diferencial"],
+    "must_mention_facts": ["el análisis de cambios compara valores de NDVI entre dos fechas", "un cambio significativo puede indicar pérdida de vigor o cambio de uso", "la nubosidad puede afectar la comparación"],
+    "must_actions": ["buscar imágenes de enero y junio para Córdoba", "calcular la diferencia de NDVI entre ambos meses", "interpretar los cambios detectados en contexto agronómico"],
+    "must_acknowledge_missing": ["no se ha indicado si ha habido eventos climáticos extremos", "no se conoce el historial de riego o tratamientos"],
+    "forbidden_claims": ["el análisis de cambios es 100% preciso", "los cambios detectados son siempre de origen agronómico"],
+    "forbidden_overclaim": ["detección perfecta de todos los cambios", "causalidad demostrada sin más datos"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe invocar stac_search para buscar imágenes de ambos periodos y rs_analyst para el análisis de cambios.\nAGENTES: stac_search y rs_analyst deben ser invocados para detección de cambios.\nDANGER: No considerar la nubosidad como factor de error. No comparar exactamente los mismos meses.\nBONUS: Proporcionar valores NDVI específicos, identificar zonas con mayor cambio, considerar factores climáticos.",
+  "expected_route": ["stac", "rs_analyst", "writer"],
+  "routing_assertion": "stac agent must be invoked for change detection"
+}

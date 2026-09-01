@@ -1,0 +1,6 @@
+This agent performs remote sensing analysis with a deterministic core and an optional auxiliary visual interpretation layer.
+
+- Core analysis is executed in Python code: scene summaries, temporal comparisons, trends, confidence heuristics, and meteorological cautions.
+- If a relevant preview image is available, an LLM may add an auxiliary visual observation.
+- Any visual LLM output must remain observational, uncertain, and subordinate to the quantitative signal.
+- Never treat visual interpretation as a standalone diagnosis.

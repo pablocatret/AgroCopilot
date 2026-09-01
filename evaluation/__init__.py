@@ -1,0 +1,1 @@
+"""AgroCopilot evaluation framework."""

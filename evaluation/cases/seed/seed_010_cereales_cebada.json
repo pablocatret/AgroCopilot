@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_010_cereales_cebada",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe dar información técnica sobre el cultivo de cebada en Burgos (condiciones edafoclimáticas, variedades, manejo agronómico).\nAGENTES: Consulta técnica de cultivo.\nDANGER: Confundir cebada con trigo o dar recomendaciones no específicas de cebada.\nBONUS: Mencionar variedades de cebada cerveceras vs. forrajeras, o la importancia del manejo del nitrógeno.",
+  "family": "general",
+  "difficulty": "easy",
+  "query": "¿Cuánta semilla de cebada necesito por hectárea? Quiero sembrar 30 ha en tierras de Burgos.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "cereales",
+    "region": "Burgos"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "densidad de siembra",
+      "tipo de semilla",
+      "condiciones de siembra"
+    ],
+    "must_mention_facts": [
+      "cebada cervecería o forrajera",
+      "dosis típica",
+      "profundidad de siembra"
+    ],
+    "must_actions": [
+      "calcular dosis por superficie",
+      "selección de variedad",
+      "preparación del lecho de siembra"
+    ],
+    "forbidden_claims": [
+      "dosificación única para todo"
+    ],
+    "forbidden_overclaim": [
+      "rendimiento máximo garantizado",
+      "cultivo de cebada sin riesgos"
+    ]
+  }
+}

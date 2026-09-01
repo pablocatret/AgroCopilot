@@ -1,0 +1,37 @@
+{
+  "case_id": "seed_005_frutales_poda",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe dar recomendaciones de poda adaptadas al tipo de frutal y la época del año.\nAGENTES: Consulta técnica de manejo agronómico.\nDANGER: Recomendar poda en época incorrecta para el frutal especificado.\nBONUS: Mencionar herramientas específicas, técnicas de poda en verde vs. poda en seco, oSanidad de la herida de poda.",
+  "family": "general",
+  "difficulty": "easy",
+  "query": "¿Cuándo es el mejor momento para podar mis manzanos? Tengo 200 árboles en Asturias.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "frutales",
+    "region": "Asturias"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "época de poda",
+      "estado fenológico",
+      "herramientas adecuadas"
+    ],
+    "must_mention_facts": [
+      "manzano",
+      "poda en seco",
+      "variedades de manzana"
+    ],
+    "must_actions": [
+      "identificar yemas",
+      "herramientas desinfectadas",
+      "evitar lluvias"
+    ],
+    "forbidden_claims": [
+      "poda cualquier día",
+      "sin riesgo de infección"
+    ],
+    "forbidden_overclaim": [
+      "garantía de que la poda mejorará el rendimiento",
+      "técnica infalible de poda"
+    ]
+  }
+}

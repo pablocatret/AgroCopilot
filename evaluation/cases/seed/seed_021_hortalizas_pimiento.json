@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_021_hortalizas_pimiento",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe distinguir entre requisitos generales para vender alimentos, trazabilidad y etiquetado, y una eventual protección IGP o certificación ecológica. Debe comprobar si el producto, origen, operador y canal de venta cumplen el pliego y la normativa vigente.\nAGENTES: Consulta de cumplimiento normativo.\nDANGER: Dar por concedida una IGP, inventar una norma o afirmar que basta con estar inscrito en un registro.\nBONUS: Remitir al pliego vigente de la IGP Pimiento del Piquillo de Lodosa si el producto y el origen cumplen sus condiciones.",
+  "family": "compliance",
+  "difficulty": "medium",
+  "query": "Quiero vender pimientos del piquillo de La Rioja en mercados de abastos. ¿Qué certificaciones necesito?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "hortalizas",
+    "region": "La Rioja"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "registro sanitario",
+      "etiquetado",
+      "trazabilidad"
+    ],
+    "must_mention_facts": [
+      "la IGP Pimiento del Piquillo solo si el producto y el origen cumplen su pliego",
+      "registro sanitario o comunicación previa cuando resulte exigible por la actividad",
+      "trazabilidad y etiquetado aplicables al canal de venta"
+    ],
+    "must_actions": [
+      "verificar el registro o comunicación administrativa que corresponda a la actividad",
+      "implementar sistema de trazabilidad",
+      "cumplir requisitos de etiquetado"
+    ],
+    "forbidden_claims": [
+      "vender sin registro"
+    ],
+    "forbidden_overclaim": [
+      "certificación automática de calidad",
+      "cumplimiento normativo sin esfuerzo"
+    ]
+  }
+}

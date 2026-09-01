@@ -1,0 +1,41 @@
+{
+  "case_id": "seed_003_cereales_secano",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe analizar el trade-off entre rendimiento y resistencia a roya, considerando las condiciones locales de Castilla y León.\nAGENTES: Consulta de decisión agronómica.\nDANGER: Recomendar una variedad sin considerar la presión de roya en la zona. Ignorar el factor económico.\nBONUS: Mencionar variedades específicas autorizadas en el catálogo español, o fuentes de información sobre incidencia de roya.",
+  "family": "decision",
+  "difficulty": "medium",
+  "query": "Tengo 50 ha de trigo en secano en Castilla y León. ¿Siembro variedad resistente a roya o variedad de alto rendimiento? La previsión de lluvias es normal este año.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "cereales",
+    "region": "Castilla y León"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "análisis del trade-off rendimiento vs. resistencia a roya",
+      "importancia de la presión local de roya",
+      "consideración de factores económicos (coste de semilla vs. rendimiento esperado)"
+    ],
+    "must_mention_facts": [
+      "las variedades resistentes a roya suelen tener menor potencial de rendimiento",
+      "la presión de roya varía según la zona y las condiciones climáticas",
+      "el coste de semilla es un factor significativo en el análisis económico"
+    ],
+    "must_actions": [
+      "consultar la incidencia histórica de roya en la zona",
+      "evaluar el coste-beneficio de variedad resistente vs. alto rendimiento",
+      "solicitar asesoramiento técnico antes de decidir"
+    ],
+    "must_acknowledge_missing": [
+      "no se ha indicado la variedad concreta que se considera",
+      "no se conoce la presión histórica de roya en la parcela"
+    ],
+    "forbidden_claims": [
+      "una variedad es siempre mejor que otra",
+      "no hay riesgo en ninguna opción"
+    ],
+    "forbidden_overclaim": [
+      "garantía de rendimiento con variedad resistente",
+      "100% resistente sin pérdida de calidad"
+    ]
+  }
+}

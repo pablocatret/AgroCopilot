@@ -1,0 +1,123 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# --- Entornos virtuales ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Paquetes/Distribución ---
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Configuración local ---
+.env
+.env.*
+*.env
+!.env.example
+*.ini
+*.toml.local
+settings_local.py
+!pytest.ini
+
+# --- Logs y cachés ---
+*.log
+*.out
+*.err
+*.pid
+*.seed
+.cache/
+test-tmp/
+.ruff_cache/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+*.cover
+mutants/
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# --- IDE/Editor ---
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# --- Archivos del sistema ---
+.DS_Store
+Thumbs.db
+
+# --- Streamlit ---
+.streamlit/
+
+# --- Documentos generados ---
+*.pdf
+*.docx
+*.xlsx
+*.csv
+*.tmp
+*.bak
+
+# --- Imágenes temporales ---
+*.png
+*.jpg
+*.jpeg
+!/evaluation/cases/attachments/olive_peacock_spot.jpg
+!/evaluation/cases/attachments/eu_organic_certificate_guidance.pdf
+!/evaluation/cases/attachments/rendimientos_olivar.csv
+*.gif
+*.svg
+
+# --- Modelos/Datasets locales ---
+data/
+data/legalize/
+datasets/
+models/
+checkpoints/
+
+# --- Docker ---
+*.pid
+*.sock
+docker-compose.override.yml
+
+# --- Node/npm (por si usas algo de frontend) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Personal ---
+/notes/
+/scratch/
+backend/logs/
+/logs/
+backend/attachments/
+qdrant_data/
+dist/
+
+# --- Runtime state / local evaluation outputs ---
+/data.db
+/data/costs.db
+/evaluation/results_persistent/
+/evaluation/results/
+/evaluation/report/
+/eval_results/
+/eval_report/
+/.pytest_tmp/
+/pytest-basetemp-*/
+/pytest-cache-files-*/
+/temp_access_check/
+backend/memory/*
+!backend/memory/demo-olivar-jaen/
+!backend/memory/demo-olivar-jaen/**
+

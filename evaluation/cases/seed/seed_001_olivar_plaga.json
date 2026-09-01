@@ -1,0 +1,42 @@
+{
+  "case_id": "seed_001_olivar_plaga",
+  "family": "diagnosis",
+  "difficulty": "easy",
+  "query": "Tengo una parcela de olivar de 12 hectáreas en Jaén y he visto manchas oscuras en las hojas. ¿Qué puede ser y qué hago?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Jaén"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "diferenciación entre fumagina, verticilosis y repilo",
+      "manejo integrado de plagas (MIP)",
+      "importancia del muestreo antes de tratar"
+    ],
+    "must_mention_facts": [
+      "la fumagina (Capnodium elaeophilum) se asocia a secreción de melaza de cochinilla",
+      "el repilo (Spilocaea oleagina) es más probable en otoño con humedad alta",
+      "los productos autorizados para olivo están en el Registro de Fitosanitarios del MAPA"
+    ],
+    "must_actions": [
+      "inspeccionar hojas y frutos para identificar síntomas específicos",
+      "consultar el Registro Oficial de Productos Fitosanitarios",
+      "aplicar solo productos autorizados según etiqueta del fabricante"
+    ],
+    "must_acknowledge_missing": [
+      "no se ha proporcionado foto del cultivo",
+      "no se conoce el historial de tratamientos previos"
+    ],
+    "forbidden_claims": [
+      "este diagnóstico es definitivo sin análisis de campo",
+      "no hace falta consultar a un técnico agrícola"
+    ],
+    "forbidden_overclaim": [
+      "garantía de curación completa",
+      "100% efectivo sin excepciones",
+      "solución definitiva"
+    ]
+  },
+  "judge_rubric_notes": "El agricultor necesita identificar la plaga y recibir acción inmediata."
+}

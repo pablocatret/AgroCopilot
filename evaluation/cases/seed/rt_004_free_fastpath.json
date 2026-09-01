@@ -1,0 +1,21 @@
+{
+  "case_id": "rt_004_free_fastpath",
+  "family": "general",
+  "difficulty": "easy",
+  "query": "¿Qué es el oídio del viñedo?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "viñedo",
+    "region": "La Rioja"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": ["definición de oídio de la vid", "agente causal y condiciones favorables", "síntomas característicos"],
+    "must_mention_facts": ["el oídio de la vid se asocia a Erysiphe necator, también denominado históricamente Uncinula necator", "la expresión de la enfermedad depende de temperatura, humedad y estado fenológico", "los síntomas pueden incluir polvo blanco en hojas, brotes e inflorescencias o racimos"],
+    "must_actions": ["proporcionar una definición clara y concisa", "mencionar condiciones que favorecen su aparición"],
+    "forbidden_claims": ["el oídio no existe en viñedo", "no es una enfermedad relevante"],
+    "forbidden_overclaim": ["definición exhaustiva sin necesidad de más contexto", "conocimiento completo sin limitaciones"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: Esta es una consulta definicional simple que no requiere agentes especializados. El writer o free agent pueden responder directamente.\nAGENTES: No se esperan agentes especializados. El writer o free agent con fast-path son suficientes.\nDANGER: Invocar agentes especializados innecesariamente (stac, legal, etc.) para una consulta definicional.\nBONUS: Incluir información práctica adicional (prevención, tratamientos) de forma concisa.",
+  "expected_route": ["writer"],
+  "routing_assertion": "no specialized agents needed for simple definitional query"
+}

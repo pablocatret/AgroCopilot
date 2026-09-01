@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_014_hortalizas_papa",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe identificar las enfermedades comunes de la papa (tubérculos negros, Phytophthora, virus) y recomendar tratamientos.\nAGENTES: Consulta de diagnóstico fitosanitario.\nDANGER: Diagnosticar sin considerar las condiciones de Galicia (humedad, temperatura).\nBONUS: Mencionar el manejo integrado de plagas para papa o la importancia de la rotación de cultivos.",
+  "family": "diagnosis",
+  "difficulty": "easy",
+  "query": "Las hojas de mi papa en Galicia tienen manchas negras y se caen. ¿Qué es y qué puedo aplicar?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "hortalizas",
+    "region": "Galicia"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "identificación de enfermedad",
+      "tratamiento fitosanitario",
+      "prevención"
+    ],
+    "must_mention_facts": [
+      "papa",
+      "tizón tardío",
+      "evolución de los síntomas y condiciones favorables para la enfermedad"
+    ],
+    "must_actions": [
+      "recoger muestras",
+      "consultar el Registro Oficial y la etiqueta antes de aplicar un fungicida autorizado",
+      "mejorar drenaje"
+    ],
+    "forbidden_claims": [
+      "curación inmediata"
+    ],
+    "forbidden_overclaim": [
+      "diagnóstico definitivo sin laboratorio",
+      "tratamiento infalible para la papa"
+    ]
+  }
+}

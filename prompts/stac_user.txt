@@ -1,0 +1,31 @@
+# Context
+
+{% if mission is defined and mission %}
+{{ mission }}
+
+{% endif %}
+{{ memory_summary }}
+
+{{ case_history_summary }}
+
+{{ observations_summary }}
+
+{{ temporal_focus }}
+
+{{ monitoring_summary }}
+
+{{ attachments_summary }}
+
+{{ catalog_context }}
+
+# Decision Mode
+
+{{ decision_mode }}
+
+# User Query
+
+{{ query }}
+
+# Instructions
+
+Translate the user query into the appropriate STAC tool call(s). Use geocode_place first if the location is a place name. Return only tool calls, no explanatory text.

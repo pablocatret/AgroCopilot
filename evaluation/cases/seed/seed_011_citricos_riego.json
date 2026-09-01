@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_011_citricos_riego",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe recomendar estrategias de riego para cítricos en Castellón, considerando el clima mediterráneo y la disponibilidad de agua.\nAGENTES: Consulta de riego y manejo hídrico.\nDANGER: Recomendar riego sin considerar la fase fenológica del citro o las restricciones de agua.\nBONUS: Mencionar riego por goteo subsuperficial, tensiómetros, o el plan de regadíos de la zona.",
+  "family": "decision",
+  "difficulty": "medium",
+  "query": "Mi naranjo de mesa en Castellón tiene exceso de vegetación y poca producción. ¿Cómo ajusto el riego y la fertilización?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "cítricos",
+    "region": "Castellón"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "equilibrio vegetativo-reproductivo",
+      "fertirrigación",
+      "análisis de savia"
+    ],
+    "must_mention_facts": [
+      "naranjo",
+      "exceso de nitrógeno",
+      "relación C/N"
+    ],
+    "must_actions": [
+      "análisis de hoja",
+      "ajuste de programa de riego",
+      "reducción de nitrógeno"
+    ],
+    "forbidden_claims": [
+      "sin efectos"
+    ],
+    "forbidden_overclaim": [
+      "riego perfecto sin sensores",
+      "ahorro de agua sin impacto en producción"
+    ]
+  }
+}

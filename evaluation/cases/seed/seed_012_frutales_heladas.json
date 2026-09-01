@@ -1,0 +1,41 @@
+{
+  "case_id": "seed_012_frutales_heladas",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe evaluar el daño por heladas en frutales y recomendar medidas preventivas y correctivas.\nAGENTES: Consulta de diagnóstico y manejo.\nDANGER: Subestimar el daño por heladas o no recomendar medidas de protección.\nBONUS: Mencionar termperatura umbral para cada frutal, sistemas de protección contra heladas (aspersores, calefactores), o la importancia de la localización de la finca.",
+  "family": "diagnosis",
+  "difficulty": "hard",
+  "query": "Helada tardía afectó a mis melocotoneros en Lleida. ¿Puedo hacer algo ahora o espero a la próxima floración?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "frutales",
+    "region": "Lleida"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "evaluación del daño por helada en frutales",
+      "medidas preventivas (aspersores, calefactores)",
+      "recuperación del cultivo según gravedad del daño"
+    ],
+    "must_mention_facts": [
+      "las heladas tardías de primavera son las más peligrosas para frutales en floración",
+      "el umbral de daño varía según la especie y la fase fenológica",
+      "los sistemas de protección incluyen aspersores, calefactores y cubiertas"
+    ],
+    "must_actions": [
+      "evaluar el porcentaje de daño en yemas y flores",
+      "implementar sistemas de protección para próximas heladas",
+      "planificar medidas a largo plazo (elección de variedades, ubicación)"
+    ],
+    "must_acknowledge_missing": [
+      "no se ha indicado la especie de frutal afectada",
+      "no se conoce la temperatura mínima alcanzada"
+    ],
+    "forbidden_claims": [
+      "el daño por helada se recupera solo",
+      "no hay medidas preventivas efectivas"
+    ],
+    "forbidden_overclaim": [
+      "protección total contra heladas",
+      "sin daño con medidas preventivas"
+    ]
+  }
+}

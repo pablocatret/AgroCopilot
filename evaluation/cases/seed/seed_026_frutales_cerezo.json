@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_026_frutales_cerezo",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe identificar la gomosis (Phytophthora) en cerezo y recomendar tratamientos preventivos y correctivos.\nAGENTES: Consulta de diagnóstico fitosanitario.\nDANGER: Diagnosticar sin considerar las condiciones de suelo y drenaje.\nBONUS: Mencionar la importancia del portainjerto, el manejo del suelo, o los tratamientos con fosfitos.",
+  "family": "diagnosis",
+  "difficulty": "medium",
+  "query": "Mis cerezos en Huesca tienen gomosis en el tronco. ¿Qué puedo hacer?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "frutales",
+    "region": "Huesca"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "identificación de gomosis",
+      "manejo del patógeno",
+      "prevención"
+    ],
+    "must_mention_facts": [
+      "cerezo",
+      "causas posibles de gomosis, que pueden incluir problemas de cuello, suelo, heridas o patógenos según los síntomas",
+      "relación entre drenaje, estado del cuello y evolución de la gomosis"
+    ],
+    "must_actions": [
+      "tomar muestras",
+      "mejorar drenaje del cuello",
+      "consultar el diagnóstico y la etiqueta de cualquier tratamiento autorizado antes de aplicarlo"
+    ],
+    "forbidden_claims": [
+      "curación garantizada"
+    ],
+    "forbidden_overclaim": [
+      "diagnóstico definitivo de gomosis",
+      "tratamiento infalible contra Phytophthora"
+    ]
+  }
+}

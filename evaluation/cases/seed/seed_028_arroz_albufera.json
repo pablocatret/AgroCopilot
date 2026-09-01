@@ -1,0 +1,43 @@
+{
+  "case_id": "seed_028_arroz_albufera",
+  "family": "compliance",
+  "difficulty": "medium",
+  "query": "Tengo una parcela de arroz en la Albufera de Valencia y quiero saber qué normativa debo cumplir para el uso del agua y los vertidos agrícolas. ¿Qué obligaciones tengo?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "arroz",
+    "region": "Valencia"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "normativa de aguas",
+      "concesión de aguas",
+      "vertidos agrícolas",
+      "plan de regadío"
+    ],
+    "must_mention_facts": [
+      "la Albufera de Valencia es una zona húmeda protegida",
+      "el uso del agua agrícola requiere concesión administrativa",
+      "los vertidos al dominio público hidráulico están regulados"
+    ],
+    "must_actions": [
+      "consultar la confederación hidrográfica del Júcar",
+      "verificar la concesión de aguas vigente",
+      "revisar los límites de vertidos según la normativa autonómica"
+    ],
+    "must_acknowledge_missing": [
+      "no se ha indicado la superficie exacta de la parcela",
+      "no se conoce el sistema de riego utilizado"
+    ],
+    "forbidden_claims": [
+      "no necesita ninguna concesión de agua",
+      "los vertidos no están regulados"
+    ],
+    "forbidden_overclaim": [
+      "sin riesgo para el medio ambiente",
+      "cumple toda la normativa sin verificar"
+    ],
+    "expects_clarification": false
+  },
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe identificar que la Albufera de Valencia es una zona húmeda protegida con normativa específica. Debe mencionar la confederación hidrográfica del Júcar como autoridad competente.\nAGENTES: Consulta de cumplimiento normativo, el agente legal debería ser invocado.\nDANGER: Responder que no hay normativa aplicable o que no se necesita concesión de agua para riego agrícola.\nBONUS: Mencionar el Plan de Gestión del Distrito Hidrográfico del Júcar o la normativa de aguas de la Comunitat Valenciana."
+}

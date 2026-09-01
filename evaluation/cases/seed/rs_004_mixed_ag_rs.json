@@ -1,0 +1,22 @@
+{
+  "case_id": "rs_004_mixed_ag_rs",
+  "family": "decision",
+  "difficulty": "hard",
+  "query": "Mi olivar en Jaén tiene problemas de vigor. ¿Puedes buscar imágenes satelitales y también decirme qué normativa debo cumplir para aplicar abono?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Jaén"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": ["análisis satelital de vigor", "marco normativo de fertilización", "integración de fuentes de información"],
+    "must_mention_facts": ["el NDVI puede indicar problemas de vigor", "la fertilización de olivar está regulada por el RD 506/2013", "los productos fertilizantes deben estar registrados en el MAPA"],
+    "must_actions": ["buscar imágenes satelitales para evaluar el vigor", "consultar la normativa de fertilización applicable", "integrar ambos análisis en una recomendación"],
+    "must_acknowledge_missing": ["no se ha proporcionado el análisis de suelo", "no se ha indicado la variedad del olivo"],
+    "forbidden_claims": ["el análisis satelital es suficiente sin análisis de suelo", "la normativa no tiene requisitos específicos"],
+    "forbidden_overclaim": ["diagnóstico completo solo con satélite", "cumplimiento normativo automático"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe invocar stac_search/rs_analyst para el análisis de vigor Y legal para la normativa de fertilización.\nAGENTES: stac_search, rs_analyst y legal deben ser invocados para cubrir ambos aspectos.\nDANGER: Solo cubrir uno de los dos aspectos (satelital o normativo). No integrar la información.\nBONUS: proporcionar valores NDVI específicos, mencionar la normativa exacta, y ofrecer una recomendación integrada.",
+  "expected_route": ["stac", "rs_analyst", "legal", "writer"],
+  "routing_assertion": "both stac/rs_analyst and legal agents must be invoked"
+}

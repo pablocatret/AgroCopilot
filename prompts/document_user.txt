@@ -1,0 +1,17 @@
+# Context
+
+{{ memory_summary }}
+
+{{ extracted_context }}
+
+# Decision Mode
+
+{{ decision_mode }}
+
+# User Query
+
+{{ query }}
+
+# Instructions
+
+Analyze the attached document(s) and extract all factual content. Return structured JSON following the extraction schema. Distinguish observed text, inference, and absence. Do not invent data or declare legal validity.

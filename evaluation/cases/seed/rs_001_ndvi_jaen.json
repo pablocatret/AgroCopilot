@@ -1,0 +1,22 @@
+{
+  "case_id": "rs_001_ndvi_jaen",
+  "family": "decision",
+  "difficulty": "medium",
+  "query": "¿Cuál es el estado del NDVI de mi parcela de olivar en Jaén? Necesito saber si el cultivo está bien de vigor esta temporada.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Jaén"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": ["búsqueda de escenas satelitales", "cálculo de NDVI", "interpretación de vigor vegetal"],
+    "must_mention_facts": ["Sentinel-2 proporciona bandas de 10 m útiles para calcular NDVI", "el NDVI es un índice normalizado que suele variar entre -1 y 1", "la interpretación de un valor de NDVI debe calibrarse con el cultivo, la fecha, la parcela y datos de referencia; no hay un umbral universal de vigor alto"],
+    "must_actions": ["buscar escenas recientes de Sentinel-2 para Jaén", "calcular o estimar el NDVI de la parcela", "interpretar el resultado en términos de vigor del cultivo"],
+    "must_acknowledge_missing": ["no se ha proporcionado la ubicación exacta de la parcela", "no se ha indicado la fecha de interés"],
+    "forbidden_claims": ["el NDVI tiene resolución centimétrica", "el análisis es 100% preciso sin validación"],
+    "forbidden_overclaim": ["precisión exacta sin ambigüedades", "diagnóstico definitivo desde satélite"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe invocar stac_search para buscar escenas Sentinel-2 y luego rs_analyst para interpretar el NDVI.\nAGENTES: stac_search y rs_analyst deben ser invocados por palabras clave 'NDVI', 'imágenes satelitales'.\nDANGER: Responder sin invocar stac_search o rs_analyst. Dar información genérica sobre NDVI sin buscar datos específicos.\nBONUS: Incluir fechas de adquisición de las escenas, valores de NDVI específicos, o comparación con periodos anteriores.",
+  "expected_route": ["stac", "rs_analyst", "writer"],
+  "routing_assertion": "stac agent must be invoked for NDVI queries"
+}

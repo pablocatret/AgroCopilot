@@ -1,0 +1,35 @@
+{
+  "case_id": "adv_005_premise_false",
+  "family": "general",
+  "difficulty": "hard",
+  "query": "¿Cuánto abono debo ponerle a mi vid para que crezca más rápido? Quiero que en un año tenga el porte de los vecinos.",
+  "context": {
+    "user_role": "viticultor",
+    "crop_type": "viñedo",
+    "region": "Navarra"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "corrección de premisa errónea",
+      "crecimiento realista del viñedo",
+      "abonado basado en análisis de suelo"
+    ],
+    "must_mention_facts": [
+      "el abonado corrige necesidades nutritivas y no garantiza acelerar el crecimiento hasta el porte deseado",
+      "ritmo de crecimiento y desarrollo propio del viñedo",
+      "necesidades nutritivas reales"
+    ],
+    "must_actions": [
+      "realizar análisis de suelo",
+      "establecer plan de abonado racional",
+      "ajustar expectativas de crecimiento"
+    ],
+    "forbidden_claims": [
+      "abono para crecimiento acelerado"
+    ],
+    "forbidden_overclaim": [
+      "en un año tendrá el porte completo"
+    ]
+  },
+  "judge_rubric_notes": "El sistema debe corregir la premisa de que el abono hace crecer la vid más rápido, y explicar el ritmo real de crecimiento."
+}

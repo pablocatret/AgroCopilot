@@ -1,0 +1,24 @@
+{
+  "case_id": "rt_003_document_route",
+  "family": "attachment_analysis",
+  "difficulty": "easy",
+  "query": "Resume esta guía de la FAO sobre materia orgánica del suelo y señala qué dato de mi finca necesitarías antes de aplicarla.",
+  "context": {"user_role": "agricultor", "crop_type": "olivar", "region": "Jaén"},
+  "attachments": [{
+    "attachment_id": "doc_001", "filename": "fao_organic_matter_guide.html", "content_type": "text/html",
+    "description": "Página abierta de la FAO sobre la importancia de la materia orgánica del suelo.",
+    "source_url": "https://www.fao.org/4/a0100e/a0100e04.htm", "license": "FAO open web publication",
+    "sha256": "26e0c7e6495978ae3b2ae2aac32385c2d66b7b62111df322a255403190e1b2e4"
+  }],
+  "gold_expectations": {
+    "must_contain_concepts": ["resumen basado en el documento adjunto", "materia orgánica y funcionamiento del suelo", "adaptación prudente a una finca concreta"],
+    "must_mention_facts": ["la guía trata de la materia orgánica del suelo", "propone equilibrar aportes y descomposición", "el contenido de materia orgánica depende de propiedades y manejo del suelo"],
+    "must_actions": ["resumir puntos relevantes", "pedir análisis de suelo o datos de manejo", "proponer no extrapolar una guía general como diagnóstico"],
+    "must_acknowledge_missing": ["no hay análisis de suelo de la finca", "no se conoce textura, pH ni manejo actual"],
+    "forbidden_claims": ["la guía diagnostica mi finca", "puedo fijar una dosis sin análisis"],
+    "forbidden_overclaim": ["recomendación exacta sin datos de la finca"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: document_analyst debe procesar el HTML real. La respuesta debe apoyarse en su contenido, no inventar valores de análisis de suelo.",
+  "expected_route": ["document_analyst", "writer"],
+  "routing_assertion": "document_analyst must be invoked when document attachment is present"
+}

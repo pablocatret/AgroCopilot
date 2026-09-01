@@ -1,0 +1,41 @@
+{
+  "case_id": "seed_008_olivar_riego",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe analizar estrategias de riego en olivar considerando la relación precio del aceite vs. coste del agua.\nAGENTES: Consulta de decisión económica-agronómica.\nDANGER: Recomendar riego sin considerar el coste del agua o el precio del aceite.\nBONUS: Mencionar programas de riego deficitario, tensiómetros, o el reglamento de aguas de Andalucía.",
+  "family": "decision",
+  "difficulty": "hard",
+  "query": "Tengo olivar intensivo con riego por goteo en Córdoba. ¿Mantengo el riego este verano o lo reduzco? El precio del aceite está bajo y el agua sube.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Córdoba"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "estrategia de riego adaptada a la fase fenológica",
+      "riego deficitario controlado como técnica habitual",
+      "análisis económico precio del aceite vs. coste del agua"
+    ],
+    "must_mention_facts": [
+      "la respuesta del olivo al riego deficitario depende de la fase fenológica, la intensidad del déficit y las condiciones de la parcela",
+      "las etapas de cuajado y crecimiento del fruto requieren especial atención al estrés hídrico",
+      "el precio del agua es un factor determinante en la rentabilidad"
+    ],
+    "must_actions": [
+      "instalar tensiómetros o sensores de humedad del suelo",
+      "definir programa de riego según fase fenológica",
+      "evaluar el retorno económico del riego frente al secano"
+    ],
+    "must_acknowledge_missing": [
+      "no se ha indicado la superficie regada",
+      "no se conoce el tipo de sistema de riego actual"
+    ],
+    "forbidden_claims": [
+      "el riego siempre es mejor que el secano",
+      "no hay límites de agua para olivo"
+    ],
+    "forbidden_overclaim": [
+      "ahorro de agua sin perder rendimiento",
+      "riego siempre óptimo sin monitorización"
+    ]
+  }
+}

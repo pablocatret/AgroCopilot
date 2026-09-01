@@ -1,0 +1,37 @@
+{
+  "case_id": "seed_023_sidra_asturiana",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe responder a la elección de materia prima para sidra natural asturiana y aclarar si la mezcla con otras frutas cambia el producto o su denominación.\nAGENTES: Consulta técnica de elaboración y materias primas.\nDANGER: Confundir sidra con vino o afirmar que cualquier fruta produce sidra natural asturiana.\nBONUS: Mencionar familias de variedades de sidra y la necesidad de ajustar la mezcla y el protocolo de elaboración.",
+  "family": "general",
+  "difficulty": "easy",
+  "query": "¿Qué manzanas necesito para hacer sidra natural en Asturias? ¿Solo sirve la manzana o puedo mezclar con otra fruta?",
+  "context": {
+    "user_role": "productor",
+    "crop_type": "frutales",
+    "region": "Asturias"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "producción de sidra",
+      "materia prima (manzana)",
+      "corrección de concepto erróneo si menciona uva"
+    ],
+    "must_mention_facts": [
+      "manzana de sidra (sidra natural)",
+      "variedades amargas y ácidas",
+      "tradición asturiana"
+    ],
+    "must_actions": [
+      "seleccionar variedades de manzana adecuadas",
+      "controlar madurez",
+      "seguir protocolo de elaboración"
+    ],
+    "forbidden_claims": [
+      "uvas para sidra",
+      "cualquier fruta sirve"
+    ],
+    "forbidden_overclaim": [
+      "manzano sidrero sin problemas",
+      "producción de sidra garantizada"
+    ]
+  }
+}

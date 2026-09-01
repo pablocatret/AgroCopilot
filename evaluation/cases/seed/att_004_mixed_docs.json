@@ -1,0 +1,22 @@
+{
+  "case_id": "att_004_mixed_docs",
+  "family": "attachment_analysis",
+  "difficulty": "hard",
+  "query": "Adjunto una guía oficial del certificado ecológico y una foto de hojas de olivo afectadas. ¿Qué puedo concluir de cada fuente y qué relación no puedo afirmar entre ellas?",
+  "context": {"user_role": "agricultor", "crop_type": "olivar", "region": "Jaén"},
+  "attachments": [
+    {"attachment_id": "doc_001", "filename": "eu_organic_certificate_guidance.pdf", "content_type": "application/pdf", "description": "Guía oficial de la Comisión Europea sobre campos del certificado ecológico.", "source_url": "https://agriculture.ec.europa.eu/document/download/31f037c3-683b-4945-af75-a960bb1a00b6_en?filename=competent-authorities-how-model-certificate-for-organic-production_en.pdf", "license": "European Commission public document", "sha256": "5a0e35e2bd3933b5a536953cad94cdf5d892b0bbcc3479708344a5a303fb4999"},
+    {"attachment_id": "img_001", "filename": "olive_peacock_spot.jpg", "content_type": "image/jpeg", "description": "Fotografía de repilo u ojo de pavo real en hojas de olivo.", "source_url": "https://commons.wikimedia.org/wiki/File:Spilocaea_oleagina.jpg", "license": "Public domain dedication by the copyright holder", "sha256": "730eef917f8727c02fec483aaf86402ca864bd935d263dfaf638ec09aa192d43"}
+  ],
+  "gold_expectations": {
+    "must_contain_concepts": ["lectura separada de fuentes heterogéneas", "límite de inferencia entre evidencia documental y visual", "trazabilidad de qué aporta cada adjunto"],
+    "must_mention_facts": ["la guía describe campos de un certificado ecológico", "la foto muestra síntomas compatibles con repilo", "ninguno de los adjuntos acredita el estatus ecológico de una finca ni la causa de una enfermedad en ella"],
+    "must_actions": ["separar conclusiones por fuente", "pedir el certificado real y observaciones de la parcela", "recomendar una comprobación de campo antes de tratar"],
+    "must_acknowledge_missing": ["no hay certificado real de la explotación", "no hay observaciones ni historial fitosanitario de la parcela"],
+    "forbidden_claims": ["la foto demuestra incumplimiento ecológico", "la guía certifica la finca", "la enfermedad se debe al manejo ecológico"],
+    "forbidden_overclaim": ["relación causal demostrada entre ambos adjuntos"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: document_analyst y vision_ocr deben procesar los dos archivos reales. La puntuación alta exige atribuir cada conclusión a su fuente y rechazar explícitamente el salto causal entre certificado y enfermedad.",
+  "expected_route": ["document_analyst", "vision_ocr", "writer"],
+  "routing_assertion": "both document_analyst and vision_ocr must be invoked for mixed attachments"
+}

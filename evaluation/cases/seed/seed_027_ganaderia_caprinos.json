@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_027_ganaderia_caprinos",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe dar información relevante para la ganadería caprina en Jaén (razas, manejo sanitario, normativa).\nAGENTES: Consulta ganadera general.\nDANGER: Responder con información genérica no aplicable a la ganadería caprina.\nBONUS: Mencionar razas autóctonas (Murciano-Granadina, Malagueña), el manejo sanitario obligatorio, o las ayudas a la ganadería extensiva.",
+  "family": "general",
+  "difficulty": "easy",
+  "query": "¿Cómo organizo la alimentación de mi rebaño de cabras lecheras en Jaén durante el verano?",
+  "context": {
+    "user_role": "ganadero",
+    "crop_type": "ganadería caprina",
+    "region": "Jaén"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "plan de alimentación",
+      "necesidades nutricionales",
+      "acceso a agua"
+    ],
+    "must_mention_facts": [
+      "caprino lechero",
+      "proteína cruda",
+      "minerales"
+    ],
+    "must_actions": [
+      "balancear ración",
+      "asegurar sombra y agua",
+      "suplementar con minerales"
+    ],
+    "forbidden_claims": [
+      "alimentación única"
+    ],
+    "forbidden_overclaim": [
+      "ganadería caprina sin problemas",
+      "producción caprina garantizada"
+    ]
+  }
+}

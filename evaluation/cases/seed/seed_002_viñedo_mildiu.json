@@ -1,0 +1,42 @@
+{
+  "case_id": "seed_002_viñedo_mildiu",
+  "judge_rubric_notes": "EVALUACIÓN: La consulta describe oídio y un control insuficiente tras dos aplicaciones de azufre. El sistema debe mantener esa hipótesis como provisional, comprobar si los síntomas son compatibles y distinguir oídio de mildiu antes de recomendar medidas.\nAGENTES: Consulta de diagnóstico fitosanitario.\nDANGER: Cambiar sin evidencia el caso a mildiu, recomendar productos no autorizados o dar una pauta cerrada sin fase fenológica, formulación y etiqueta.\nBONUS: Relacionar la respuesta con el historial de azufre, la meteorología y la necesidad de confirmar el diagnóstico.",
+  "family": "diagnosis",
+  "difficulty": "medium",
+  "query": "Mi viñedo en La Rioja tiene oídio. Llevo dos tratamientos de azufre pero no se controla bien. ¿Qué alternativas tengo?",
+  "context": {
+    "user_role": "viticultor",
+    "crop_type": "viñedo",
+    "region": "La Rioja"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "identificación provisional de oídio y diferenciación frente a mildiu",
+      "condiciones ambientales y fase fenológica relevantes para el oídio",
+      "importancia de distinguir medidas preventivas y curativas"
+    ],
+    "must_mention_facts": [
+      "el oídio de la vid se asocia a Erysiphe necator, también denominado históricamente Uncinula necator",
+      "la eficacia del azufre y de cualquier alternativa depende de la formulación, el momento y las condiciones de aplicación",
+      "la elección de un producto debe comprobarse en la etiqueta y en el Registro Oficial de Productos Fitosanitarios"
+    ],
+    "must_actions": [
+      "revisar síntomas, fase fenológica y eficacia real de las aplicaciones previas",
+      "consultar productos y usos autorizados antes de aplicar una alternativa",
+      "monitorizar el cultivo y pedir asesoramiento técnico si el diagnóstico o el control siguen siendo inciertos"
+    ],
+    "must_acknowledge_missing": [
+      "no se ha indicado la fase fenológica del viñedo",
+      "no se conoce la formulación, dosis, fechas y condiciones de aplicación del azufre"
+    ],
+    "forbidden_claims": [
+      "el oídio está confirmado sin comprobar los síntomas",
+      "una alternativa concreta es segura o eficaz sin revisar su etiqueta"
+    ],
+    "forbidden_overclaim": [
+      "garantía de protección completa",
+      "100% efectivo sin excepciones",
+      "solución definitiva"
+    ]
+  }
+}

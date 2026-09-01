@@ -1,0 +1,17 @@
+Tarea asignada por el organizer:
+{{ task_description }}
+
+Consulta original del usuario:
+{{ query }}
+
+{% if memory_summary != "Sin memoria previa." %}
+Contexto persistente del perfil:
+{{ memory_summary }}
+{% endif %}
+
+{% if conversation_history != "Sin historial previo." %}
+Historial conversacional reciente:
+{{ conversation_history }}
+{% endif %}
+
+Ejecuta la tarea descrita arriba. Usa busqueda web si necesitas informacion actualizada o factual. Devuelve tus hallazgos en JSON con los campos findings, confidence y limitations.

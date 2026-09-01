@@ -1,0 +1,32 @@
+{
+  "case_id": "adv_004_conflicting_info",
+  "family": "diagnosis",
+  "difficulty": "hard",
+  "query": "Mi técnico me dijo que mis olivos están infectados de Xylella pero otros dicen que es solo sequía. ¿Quién tiene razón?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Córdoba"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "conflict de opiniones",
+      "diagnóstico diferencial",
+      "necesidad de análisis de laboratorio"
+    ],
+    "must_mention_facts": [
+      "Xylella fastidiosa",
+      "análisis de laboratorio",
+      "plaga cuarentenaria"
+    ],
+    "must_actions": [
+      "solicitar análisis de laboratorio",
+      "consultar autoridad fitosanitaria",
+      "no descartar ninguna opción"
+    ],
+    "forbidden_claims": [
+      "sin Xylella definitivamente",
+      "es solo sequía"
+    ]
+  }
+}

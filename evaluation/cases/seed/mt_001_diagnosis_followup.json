@@ -1,0 +1,37 @@
+{
+  "case_id": "mt_001_diagnosis_followup",
+  "family": "diagnosis",
+  "difficulty": "medium",
+  "is_multiturn": true,
+  "query": "Tengo manchas oscuras en las hojas de mi olivar en Jaén.",
+  "turns": [
+    {
+      "turn": 1,
+      "query": "Tengo manchas oscuras en las hojas de mi olivar en Jaén.",
+      "expected_behavior": "identify_symptoms",
+      "gold_expectations": {
+        "must_contain_concepts": ["identificación de síntomas", "posibles causas fitosanitarias"],
+        "must_actions": ["muestreo de hojas", "solicitar más información"],
+        "expects_clarification": true
+      }
+    },
+    {
+      "turn": 2,
+      "query": "Las manchas son marrones y se caen las hojas. Es otoño.",
+      "expected_behavior": "refine_diagnosis",
+      "context_override": {
+        "previous_context": "El usuario ya describió manchas oscuras en hojas de olivar en Jaén."
+      },
+      "gold_expectations": {
+        "must_contain_concepts": ["diagnóstico refinado", "tratamiento temporal"],
+        "must_mention_facts": ["ciclo biológico del olivo", "oportunidad de tratamiento en otoño"],
+        "must_actions": ["valorar medidas preventivas solo si el diagnóstico provisional, la fase y la etiqueta las justifican", "monitorizar evolución"]
+      }
+    }
+  ],
+  "gold_expectations": {},
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe mantener el contexto del diagnóstico anterior y refinar la respuesta sin pedir información ya proporcionada.\nAGENTES: Consulta de diagnóstico fitosanitario.\nDANGER: Pedir en el segundo turno la información que el usuario ya dio en el primero. No mantener contexto entre turnos.\nBONUS: En el segundo turno, referirse explícitamente a la información del primer turno y proporcionar un diagnóstico más específico.",
+  "expected_route": ["free", "writer"],
+  "optional_route": ["free"],
+  "routing_assertion": "free must preserve prior-turn context before writer produces the follow-up answer"
+}

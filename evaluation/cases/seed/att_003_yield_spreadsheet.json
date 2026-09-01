@@ -1,0 +1,24 @@
+{
+  "case_id": "att_003_yield_spreadsheet",
+  "family": "attachment_analysis",
+  "difficulty": "medium",
+  "query": "Analiza este CSV con rendimientos de olivar de cinco campañas. ¿Qué tendencia muestran los datos y qué no permiten concluir?",
+  "context": {"user_role": "agricultor", "crop_type": "olivar", "region": "Córdoba"},
+  "attachments": [{
+    "attachment_id": "data_001", "filename": "rendimientos_olivar.csv", "content_type": "text/csv",
+    "description": "Fixture tabular reproducible: año, superficie, rendimiento, precipitación y temperatura media.",
+    "source_url": "local://evaluation/cases/attachments/rendimientos_olivar.csv", "license": "Synthetic evaluation fixture",
+    "sha256": "a64ab7828e0fcda915322384a35e569f62e21c0bdbb1a31e5fa263f6bd6d8ad2"
+  }],
+  "gold_expectations": {
+    "must_contain_concepts": ["análisis de una serie temporal corta", "variabilidad interanual", "asociación no es causalidad"],
+    "must_mention_facts": ["hay cinco filas entre 2019 y 2023", "el máximo rendimiento es 1980 kg/ha en 2021", "el mínimo rendimiento es 1650 kg/ha en 2022"],
+    "must_actions": ["describir la evolución anual", "señalar que cinco observaciones no prueban una tendencia robusta", "pedir datos de manejo y eventos fitosanitarios"],
+    "must_acknowledge_missing": ["no se han aportado cambios de manejo", "no se conocen eventos fitosanitarios ni el calendario de riego"],
+    "forbidden_claims": ["la lluvia demuestra la causa del rendimiento", "predicción exacta del rendimiento futuro"],
+    "forbidden_overclaim": ["causalidad demostrada sin estudio"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: spreadsheet_analyst debe leer el CSV real. No basta con comentar que el clima influye: debe citar al menos el máximo y el mínimo contenidos en el archivo y separar descripción de causalidad.",
+  "expected_route": ["spreadsheet_analyst", "writer"],
+  "routing_assertion": "spreadsheet_analyst must be invoked for CSV data file"
+}

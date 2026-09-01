@@ -1,0 +1,35 @@
+Write in {{ language }}.
+
+<query>
+{{ query }}
+</query>
+
+<case_type>{{ decision_mode }}</case_type>
+
+<length_mode>{{ length_mode }}</length_mode>
+
+<evidence_context>
+<agent_summaries>
+{{ agent_summary }}
+</agent_summaries>
+
+<execution_status>
+{{ execution_summary }}
+</execution_status>
+
+<memory>
+{{ memory_summary }}
+</memory>
+
+<remote_sensing_context>
+{{ rs_context }}
+</remote_sensing_context>
+
+<compact_context>
+{{ context_window }}
+</compact_context>
+</evidence_context>
+
+<references>
+{{ references_block }}
+</references>

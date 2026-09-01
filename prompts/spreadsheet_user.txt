@@ -1,0 +1,20 @@
+Analyze the spreadsheet data provided in context.
+
+# INPUTS
+
+- User query: {{ query }}
+- Decision mode: {{ decision_mode }}
+- Memory summary: {{ memory_summary }}
+- Extracted context: {{ extracted_context }}
+
+# INSTRUCTIONS
+
+1. Profile the spreadsheet following your system instructions.
+2. Address the user query directly using only data present in the file or explicitly provided in context.
+3. If the query asks for agronomic interpretation, clearly separate what the data shows from what would require additional expertise or data.
+4. If the query asks for a decision and the data is incomplete, state what is missing before providing any analysis.
+5. Respect decision_mode: if set to "safe", err on the side of caution and flag uncertainties; if set to "standard", provide analysis with appropriate confidence levels.
+
+# OUTPUT
+
+Return your response as the JSON structure defined in your system instructions. Include all sections: file_profile, agronomic_variables, findings, and recommendations.

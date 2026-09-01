@@ -1,0 +1,18 @@
+services:
+  api:
+    build: .
+    env_file: .env
+    ports: ["8000:8000"]
+    command: uvicorn backend.api:app --host 0.0.0.0 --port 8000
+    volumes: [".:/app"]
+  ui-web:
+    image: node:20
+    working_dir: /app/ui-web
+    depends_on: [api]
+    ports: ["5173:5173"]
+    environment:
+      VITE_API_BASE: http://localhost:8000
+    # Local-development convenience. The documented delivery path remains
+    # the backend and frontend started locally outside Docker.
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0 --port 5173"
+    volumes: [".:/app"]

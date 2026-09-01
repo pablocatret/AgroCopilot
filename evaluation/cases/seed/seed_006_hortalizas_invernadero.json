@@ -1,0 +1,41 @@
+{
+  "case_id": "seed_006_hortalizas_invernadero",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe considerar las particularidades del cultivo en invernadero (control climático, riego, plagas específicas).\nAGENTES: Consulta de decisión agronómica.\nDANGER: Ignorar las condiciones específicas de invernadero y dar recomendaciones de campo abierto.\nBONUS: Mencionar técnicas de control integrado de plagas (CIP) en invernadero o monitorización de humedad.",
+  "family": "decision",
+  "difficulty": "medium",
+  "query": "Quiero instalar un invernadero para tomate en Almería. ¿Qué sistema elijo: polietileno, policarbonato o vitro? Mi presupuesto es limitado.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "hortalizas",
+    "region": "Almería"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "optimización del rendimiento en invernadero",
+      "control integrado de plagas (CIP) adaptado a invernadero",
+      "gestión eficiente del agua y fertirriego"
+    ],
+    "must_mention_facts": [
+      "el invernadero permite control climático pero requiere gestión activa de humedad y ventilación",
+      "el fertirriego permite ajustar la nutrición a la fase fenológica",
+      "las plagas comunes en invernadero incluyen mosca blanca, trips y arañas rojas"
+    ],
+    "must_actions": [
+      "instalar sistema de riego por goteo con fertirriego",
+      "implementar control biológico o químico según el nivel de plaga",
+      "monitorear humedad y temperatura diariamente"
+    ],
+    "must_acknowledge_missing": [
+      "no se ha indicado el tipo de hortaliza cultivada",
+      "no se conoce el sistema de ventilación del invernadero"
+    ],
+    "forbidden_claims": [
+      "el invernadero elimina todos los riesgos fitosanitarios",
+      "no es necesario control biológico"
+    ],
+    "forbidden_overclaim": [
+      "control total del clima sin coste",
+      "producción libre de plagas en invernadero"
+    ]
+  }
+}

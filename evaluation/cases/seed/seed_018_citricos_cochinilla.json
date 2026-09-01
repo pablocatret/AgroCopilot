@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_018_citricos_cochinilla",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe trabajar con la hipótesis aportada de cochinilla algodonosa, sin confundirla con otras cochinillas de cítricos. Debe priorizar identificación, umbral y control compatible con enemigos naturales.\nAGENTES: Consulta de diagnóstico fitosanitario.\nDANGER: Sustituir la plaga descrita por otra especie sin evidencia o recomendar tratamientos incompatibles con el control biológico.\nBONUS: Mencionar Cryptolaemus montrouzieri solo como posible enemigo natural cuando sea adecuado y recomendar confirmar la identificación local.",
+  "family": "diagnosis",
+  "difficulty": "medium",
+  "query": "Mi mandarino en Valencia tiene cochinilla algodonosa. ¿Cómo la controlo de forma respetuosa con los enemigos naturales?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "cítricos",
+    "region": "Valencia"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "control biológico",
+      "manejo integrado",
+      "preservación de enemigos naturales"
+    ],
+    "must_mention_facts": [
+      "cochinilla algodonosa",
+      "Cryptolaemus montrouzieri",
+      "pulverización selectiva"
+    ],
+    "must_actions": [
+      "identificar niveles de plaga",
+      "liberar depredadores",
+      "evitar pesticidas no selectivos"
+    ],
+    "forbidden_claims": [
+      "erradicación total garantizada"
+    ],
+    "forbidden_overclaim": [
+      "eliminación total de la cochinilla",
+      "tratamiento definitivo contra cochinilla"
+    ]
+  }
+}

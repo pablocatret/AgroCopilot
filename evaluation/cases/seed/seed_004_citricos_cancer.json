@@ -1,0 +1,41 @@
+{
+  "case_id": "seed_004_citricos_cancer",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe identificar que el cáncer cítrico (Xanthomonas citri) es una plaga cuarentenaria de declaración obligatoria.\nAGENTES: Consulta de cumplimiento normativo, agente legal probable.\nDANGER: Responder que no es obligatorio declarar el foco a las autoridades fitosanitarias.\nBONUS: Mencionar el Reglamento (UE) 2016/2031 y el protocolo de erradicación del MAPA.",
+  "family": "compliance",
+  "difficulty": "hard",
+  "query": "¿Qué obligaciones legales tengo si detecto un foco de cáncer cítrico en mi finca de Valencia? Tengo 5 hectáreas de naranjo.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "cítricos",
+    "region": "Valencia"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "declaración obligatoria de plaga cuarentenaria",
+      "marco normativo europeo y nacional para Xanthomonas citri",
+      "medidas de erradicación obligatorias"
+    ],
+    "must_mention_facts": [
+      "Xanthomonas citri pv. citri es una bacteria cuarentenaria regulada por el Reglamento (UE) 2016/2031",
+      "la declaración del foco es obligatoria ante la autoridad fitosanitaria competente",
+      "las medidas de erradicación pueden incluir la eliminación de material infectado y otras actuaciones previstas en el protocolo oficial"
+    ],
+    "must_actions": [
+      "notificar inmediatamente la sospecha a la autoridad fitosanitaria competente",
+      "aplicar las medidas de erradicación según el protocolo oficial",
+      "seguir las instrucciones del servicio de sanidad vegetal"
+    ],
+    "must_acknowledge_missing": [
+      "no se ha indicado el porcentaje de árboles afectados",
+      "no se conoce la distancia a otros cítricos"
+    ],
+    "forbidden_claims": [
+      "no es obligatorio declarar el foco",
+      "la enfermedad se resuelve sin intervención"
+    ],
+    "forbidden_overclaim": [
+      "cumplimiento automático sin verificación",
+      "erradicación garantizada sin seguimiento"
+    ]
+  }
+}

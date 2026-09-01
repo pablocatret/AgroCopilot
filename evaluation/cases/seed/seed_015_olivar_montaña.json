@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_015_olivar_montaña",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe adaptar las recomendaciones al cultivo de olivar en zonas de montaña (Granada, altitud, pendiente).\nAGENTES: Consulta técnica de manejo agronómico.\nDANGER: Dar recomendaciones genéricas sin considerar las condiciones de montaña.\nBONUS: Mencionar variedades adaptadas, técnicas de conservación de suelos en pendiente, o la mecanización en olivar de montaña.",
+  "family": "general",
+  "difficulty": "medium",
+  "query": "Tengo olivar en ladera en Granada. ¿Cómo mejoro la mecanización sin dañar el suelo?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Granada"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "conservación de suelo",
+      "mecanización adaptada",
+      "pendiente"
+    ],
+    "must_mention_facts": [
+      "olivar en montaña",
+      "terrazas",
+      "erosión"
+    ],
+    "must_actions": [
+      "adaptar maquinaria",
+      "instalar barreras vegetales",
+      "consultar con ingeniero agrónomo"
+    ],
+    "forbidden_claims": [
+      "sin riesgo de erosión"
+    ],
+    "forbidden_overclaim": [
+      "adaptación perfecta a montaña sin coste",
+      "olivar de montaña sin limitaciones"
+    ]
+  }
+}

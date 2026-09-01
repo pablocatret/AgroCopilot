@@ -1,0 +1,35 @@
+{
+  "case_id": "seed_030_mixto_olivar_cereal",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe manejar una consulta que involucra dos cultivos diferentes (olivar y cereal) y encontrar sinergias o conflictos.\nAGENTES: Consulta de decisión agronómica multi-cultivo.\nDANGER: Responder solo para uno de los dos cultivos ignorando el otro.\nBONUS: Mencionar la rotación de cultivos, el manejo integrado de fincas mixtas, o las ayudas de la PAC para superficies múltiples.",
+  "family": "decision",
+  "difficulty": "hard",
+  "query": "Tengo una finca con olivar y cereales en Jaén. ¿Mantengo el modelo mixto o me especializo en aceite de oliva virgen extra?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "mixto",
+    "region": "Jaén"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "análisis de viabilidad",
+      "especialización vs diversificación",
+      "riesgo climático"
+    ],
+    "must_mention_facts": [
+      "rentabilidad del AOVE",
+      "diversificación de ingresos"
+    ],
+    "must_actions": [
+      "evaluar coste de producción de cada cultivo",
+      "estudiar mercado de AOVE",
+      "consultar plan de empresa"
+    ],
+    "forbidden_claims": [
+      "especialización siempre es mejor"
+    ],
+    "forbidden_overclaim": [
+      "manejo perfecto de finca mixta",
+      "optimización automática de cultivos mixtos"
+    ]
+  }
+}

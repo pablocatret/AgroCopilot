@@ -1,0 +1,41 @@
+{
+  "case_id": "seed_013_ganaderia_porcina",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe orientar sobre los bloques normativos relevantes para una explotación porcina en Huesca: registro y autorización de la explotación, gestión de estiércoles y aguas, sanidad animal, bienestar, residuos y límites de nitrógeno según ubicación y capacidad.\nAGENTES: Consulta de cumplimiento normativo, agente legal probable.\nDANGER: Inventar un real decreto concreto, aplicar un umbral sin conocer las UGM o sustituir la verificación autonómica por una conclusión cerrada.\nBONUS: Separar las obligaciones estatales, autonómicas y ambientales y remitir a la autoridad competente.",
+  "family": "compliance",
+  "difficulty": "medium",
+  "query": "¿Qué normativa deben cumplir mis naves porcinas en Huesca? Tengo 500 cerdos en ciclo completo.",
+  "context": {
+    "user_role": "ganadero",
+    "crop_type": "ganadería porcina",
+    "region": "Huesca"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "marco normativo ambiental y sanitario aplicable a la ganadería porcina",
+      "gestión obligatoria de estiércol y aguas residuales",
+      "registros de producción y trazabilidad"
+    ],
+    "must_mention_facts": [
+      "las obligaciones concretas dependen de la capacidad, las UGM, la ubicación y la normativa autonómica aplicable",
+      "la gestión de estiércoles, aguas residuales y nitrógeno debe ajustarse a los requisitos vigentes",
+      "los registros de producción incluyen datos sanitarios, reproductivos y de alimentación"
+    ],
+    "must_actions": [
+      "elaborar y presentar el plan de gestión de estiércol a la autoridad competente",
+      "mantener registros actualizados de producción ganadera",
+      "cumplir los límites de nitrato según la zona vulnerada"
+    ],
+    "must_acknowledge_missing": [
+      "no se ha indicado la conversión de los 500 animales a UGM ni la categoría de cada animal",
+      "no se conoce la capacidad de almacenamiento, la ubicación administrativa exacta ni la zona vulnerable"
+    ],
+    "forbidden_claims": [
+      "la ganadería porcina no tiene restricciones ambientales",
+      "los registros de producción son opcionales"
+    ],
+    "forbidden_overclaim": [
+      "cumplimiento ambiental automático",
+      "sin residuos de estiércol"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_020_ganaderia_ovina",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe dar información relevante para la ganadería ovina en Soria (pastoreo, manejo sanitario, normativa).\nAGENTES: Consulta ganadera general.\nDANGER: Responder con información genérica no aplicable a la ganadería ovina.\nBONUS: Mencionar razas autóctonas (Castellana, Manchega), el manejo sanitario obligatorio, o las ayudas a la ganadería extensiva.",
+  "family": "general",
+  "difficulty": "easy",
+  "query": "Tengo un rebaño de 200 ovejas merinas en Soria. ¿Cómo organizo el manejo sanitario anual?",
+  "context": {
+    "user_role": "ganadero",
+    "crop_type": "ganadería ovina",
+    "region": "Soria"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "plan sanitario",
+      "desparasitación",
+      "vacunación"
+    ],
+    "must_mention_facts": [
+      "ovino merino",
+      "parasitosis gastrointestinal",
+      "calendario vacunal"
+    ],
+    "must_actions": [
+      "desparasitar según análisis coprológico",
+      "vacunar contra clostridiosis",
+      "consultar calendario oficial"
+    ],
+    "forbidden_claims": [
+      "sin necesidad de tratamiento"
+    ],
+    "forbidden_overclaim": [
+      "ganadería ovina sin problemas sanitarios",
+      "producción láctea garantizada"
+    ]
+  }
+}

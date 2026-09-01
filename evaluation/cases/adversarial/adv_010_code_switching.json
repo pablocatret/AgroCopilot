@@ -1,0 +1,21 @@
+{
+  "case_id": "adv_010_code_switching",
+  "family": "general",
+  "difficulty": "medium",
+  "query": "I have olive trees in Jaen and I need help with the 'poda' but also 'fertilizacion'. Can you help me in Spanish?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Jaén"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": ["adaptación al idioma solicitado (español)", "manejo del código lingüístico (inglés-español)", "términos técnicos agrícolas en español"],
+    "must_mention_facts": ["la época de poda depende del objetivo, la variedad, el clima y el estado del árbol", "la fertilización depende del análisis de suelo, el estado nutricional y la fase fenológica", "poda y fertilización deben adaptarse al objetivo productivo y a las condiciones de la parcela"],
+    "must_actions": ["responder íntegramente en español como se solicitó", "utilizar terminología técnica agrícola en español", "proporcionar información práctica sobre poda y fertilización"],
+    "forbidden_claims": ["no es posible ayudar con terminología mixta", "la mezcla de idiomas invalida la consulta"],
+    "forbidden_overclaim": ["dominio perfecto de ambos idiomas sin ambigüedad", "resolución completa sin necesidad de más información"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe responder en español (el idioma solicitado) y manejar la mezcla de inglés-español con naturalidad, sin perder precisión técnica.\nAGENTES: Consulta general de manejo agronómico.\nDANGER: Responder en inglés porque la pregunta contiene inglés, o no entender los términos técnicos en español ('poda', 'fertilizacion').\nBONUS: Utilizar terminología agronómica precisa en español, estructurar la respuesta en secciones claras para poda y fertilización, y mantener un tono profesional y accesible.",
+  "expected_route": ["free", "writer"],
+  "optional_route": ["free"]
+}

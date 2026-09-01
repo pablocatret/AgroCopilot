@@ -1,0 +1,33 @@
+{
+  "case_id": "mt_003_compliance_followup",
+  "family": "compliance",
+  "difficulty": "medium",
+  "is_multiturn": true,
+  "query": "¿Qué normativa debo cumplir para vender aceite de oliva virgen extra?",
+  "turns": [
+    {
+      "turn": 1,
+      "query": "¿Qué normativa debo cumplir para vender aceite de oliva virgen extra?",
+      "expected_behavior": "list_general_framework",
+      "gold_expectations": {
+        "must_contain_concepts": ["marco normativo general", "regulación de calidad y etiquetado vigente"],
+        "must_mention_facts": ["el Reglamento de Ejecución (UE) 2022/2105 establece controles y métodos de análisis del aceite de oliva", "el Real Decreto 760/2021 establece la norma española de calidad de los aceites de oliva y de orujo"],
+        "must_actions": ["consultar la normativa europea", "verificar requisitos de etiquetado"]
+      }
+    },
+    {
+      "turn": 2,
+      "query": "Tengo una almazara en Jaén con 200 toneladas/año. ¿Qué obligaciones tengo con el RD 1514?",
+      "expected_behavior": "provide_specific_requirements",
+      "gold_expectations": {
+        "must_contain_concepts": ["corrección de la referencia normativa aportada", "obligaciones aplicables a una almazara"],
+        "must_mention_facts": ["el RD 1514/2007 aprueba el Plan General de Contabilidad y no regula la clasificación ni el envasado del aceite", "la almazara debe verificar los registros, autorizaciones y requisitos alimentarios que correspondan a su actividad"],
+        "must_actions": ["aclarar qué obligación concreta quiere consultar y verificar la norma vigente", "comprobar los registros y requisitos aplicables a la almazara"]
+      }
+    }
+  ],
+  "gold_expectations": {},
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe proporcionar primero el marco general y luego abordar la referencia al RD 1514, corrigiéndola si procede.\nAGENTES: Consulta de cumplimiento normativo, agente legal probable.\nDANGER: Repetir como válida una referencia normativa incorrecta o dar por cumplidos requisitos sin conocer la actividad exacta de la almazara.\nBONUS: Proporcionar un resumen estructurado de obligaciones por categoría (calidad, etiquetado, registro y trazabilidad).",
+  "expected_route": ["legal", "writer"],
+  "routing_assertion": "legal agent should be invoked for compliance queries"
+}

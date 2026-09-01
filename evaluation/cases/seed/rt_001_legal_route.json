@@ -1,0 +1,22 @@
+{
+  "case_id": "rt_001_legal_route",
+  "family": "compliance",
+  "difficulty": "easy",
+  "query": "¿Qué certificaciones necesito para exportar aceite de oliva virgen extra a Estados Unidos?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Jaén"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": ["requisitos de exportación de alimentos", "normativa FDA y FSMA aplicable", "comprobación condicional de requisitos fitosanitarios o aduaneros"],
+    "must_mention_facts": ["una instalación alimentaria extranjera puede tener que registrarse ante la FDA y cumplir requisitos de importación", "el aceite de oliva no debe tratarse automáticamente como una planta o producto que necesite certificado fitosanitario", "los requisitos dependen de la presentación del producto, la instalación y la operación de importación"],
+    "must_actions": ["consultar los requisitos vigentes de FDA/FSMA y del importador estadounidense", "verificar si el producto concreto necesita certificado fitosanitario u otro certificado oficial", "comprobar etiquetado, registro de instalaciones y documentación de importación"],
+    "must_acknowledge_missing": ["no se ha indicado el volumen de exportación", "no se conoce si ya dispone de certificaciones previas"],
+    "forbidden_claims": ["no se necesita certificación para exportar", "la exportación no tiene requisitos especiales"],
+    "forbidden_overclaim": ["cumplimiento automático sin verificación", "exportación sin barreras"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe identificar que la exportación de aceite de oliva a EE.UU. requiere verificar requisitos FDA/FSMA y del importador, sin asumir automáticamente un certificado fitosanitario.\nAGENTES: El agente legal debe ser invocado por las palabras clave 'certificaciones' y 'exportación'.\nDANGER: Responder que la exportación es libre de requisitos o exigir un certificado fitosanitario sin comprobar el producto concreto.\nBONUS: Mencionar registro de instalaciones, etiquetado, prior notice y agente/importador estadounidense cuando resulten aplicables.",
+  "expected_route": ["legal", "writer"],
+  "routing_assertion": "legal agent must be invoked"
+}

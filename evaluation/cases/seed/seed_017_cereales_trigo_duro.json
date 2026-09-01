@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_017_cereales_trigo_duro",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe conocer las variedades de trigo duro autorizadas en España y las condiciones de cultivo en Teruel.\nAGENTES: Consulta técnica de cultivo.\nDANGER: Confundir trigo duro con trigo blando o recomendar variedades no adaptadas.\nBONUS: Mencionar el catálogo varietal del MAPA, la calidad del grano para pasta, o las condiciones de secano en Teruel.",
+  "family": "general",
+  "difficulty": "easy",
+  "query": "¿Qué variedad de trigo duro me recomiendan para sembrar en Teruel? El suelo es calizo y el clima es continental.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "cereales",
+    "region": "Teruel"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "adaptación varietal",
+      "suelo calizo",
+      "clima continental"
+    ],
+    "must_mention_facts": [
+      "trigo duro",
+      "registros oficiales de variedades",
+      "clima de Teruel"
+    ],
+    "must_actions": [
+      "consultar listas de variedades recomendadas",
+      "solicitar semilla certificada",
+      "realizar análisis de suelo"
+    ],
+    "forbidden_claims": [
+      "variedad única universal"
+    ],
+    "forbidden_overclaim": [
+      "variedad perfecta para cualquier condición",
+      "trigo duro sin limitaciones climáticas"
+    ]
+  }
+}

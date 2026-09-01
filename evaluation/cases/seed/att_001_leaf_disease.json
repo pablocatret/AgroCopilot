@@ -1,0 +1,26 @@
+{
+  "case_id": "att_001_leaf_disease",
+  "family": "attachment_analysis",
+  "difficulty": "medium",
+  "query": "Mira esta foto de hojas de olivo. ¿Qué enfermedad es compatible con los síntomas visibles y qué debería comprobar antes de actuar?",
+  "context": {"user_role": "agricultor", "crop_type": "olivar", "region": "Jaén"},
+  "attachments": [{
+    "attachment_id": "img_001", "filename": "olive_peacock_spot.jpg", "content_type": "image/jpeg",
+    "description": "Fotografía de hojas de olivo afectadas por Spilocaea oleaginea (repilo u ojo de pavo real).",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Spilocaea_oleagina.jpg",
+    "license": "Public domain dedication by the copyright holder",
+    "sha256": "730eef917f8727c02fec483aaf86402ca864bd935d263dfaf638ec09aa192d43"
+  }],
+  "gold_expectations": {
+    "must_contain_concepts": ["análisis visual de la imagen", "repilo u ojo de pavo real como hipótesis compatible", "confirmación de campo antes de decidir un tratamiento"],
+    "must_mention_facts": ["la foto muestra lesiones circulares oscuras en hojas de olivo", "la imagen procede de un ejemplo documentado de Spilocaea oleaginea", "una imagen no informa de incidencia, distribución ni evolución en la parcela"],
+    "must_actions": ["describir los síntomas visibles", "pedir comprobación de envés, distribución y caída de hojas", "recomendar contrastar con asesor técnico antes de tratar"],
+    "must_acknowledge_missing": ["no se conoce la incidencia en la parcela", "no se ha proporcionado historial de tratamientos ni condiciones de humedad"],
+    "forbidden_claims": ["diagnóstico definitivo solo con la imagen", "no es necesario ningún análisis adicional"],
+    "forbidden_overclaim": ["diagnóstico 100% preciso desde la foto", "identificación perfecta sin ambigüedad"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: debe procesarse la imagen real adjunta. La respuesta ha de distinguir los signos observables de una identificación cerrada y no atribuir datos de parcela que la foto no contiene. AGENTES: vision_ocr debe ser invocado. DANGER: receta genérica o certeza diagnóstica. BONUS: relacionar prudentemente las lesiones circulares con repilo y concretar qué comprobaciones de campo faltan.",
+  "expected_route": ["vision_ocr", "free", "writer"],
+  "optional_route": ["free"],
+  "routing_assertion": "vision_ocr agent must be invoked when image attachment is present"
+}

@@ -1,0 +1,65 @@
+<farmer_query>
+{{ query }}
+</farmer_query>
+
+<decision_mode>
+{{ decision_mode }}
+</decision_mode>
+
+<current_case_history>
+{{ case_history }}
+</current_case_history>
+
+<evidence_summary>
+
+<legal>
+{{ legal_summary }}
+</legal>
+
+<remote_sensing>
+{{ rs_summary }}
+</remote_sensing>
+
+<remote_sensing_context>
+{{ rs_context }}
+</remote_sensing_context>
+
+<documents_and_attachments>
+{{ readiness_summary }}
+</documents_and_attachments>
+
+<execution_status>
+{{ execution_summary }}
+</execution_status>
+
+<memory_profile>
+{{ memory_summary }}
+</memory_profile>
+
+</evidence_summary>
+
+<evidence_ledger>
+{{ evidence_ledger }}
+</evidence_ledger>
+
+<deterministic_draft>
+{{ deterministic_draft }}
+</deterministic_draft>
+
+<instructions>
+Produce a structured case state by refining the deterministic draft with all available context:
+
+1. Write a case_summary (max 500 chars) that SYNTHESIZES across legal, remote sensing, and document findings — do not concatenate sources. State what is happening, what it implies, and what is missing.
+
+2. Generate open_tasks grounded in the evidence ledger. Each task must be a CONCRETE action the farmer can execute (verb + object + context). Maximum 6 tasks.
+
+3. Identify blocked_by items that represent REAL technical or business blockers (what specifically prevents a decision). Maximum 6 items.
+
+4. Specify recommended_next_input: the SINGLE most impactful next step to improve the response. Maximum 6 items.
+
+If case_history is provided, identify whether this is a follow-up case and update task status accordingly.
+</instructions>
+
+<output>
+Return ONLY a valid JSON object with fields: case_summary, open_tasks, blocked_by, recommended_next_input.
+</output>

@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_019_frutales_almendro",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe considerar las particularidades del almendro (floración temprana, sensibilidad a heladas, polinización).\nAGENTES: Consulta técnica de manejo agronómico.\nDANGER: Ignorar la sensibilidad del almendro a heladas durante la floración.\nBONUS: Mencionar variedades autoincompatibles que requieren polinizadores, técnicas de protección contra heladas, o la importancia de la abeja melífera.",
+  "family": "decision",
+  "difficulty": "hard",
+  "query": "¿Me conviene arrancar mis viejos almendros en Tarragona y replantar variedades más adaptadas a la sequía? La sequía cada vez es peor.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "frutales",
+    "region": "Tarragona"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "análisis de viabilidad",
+      "coste de reposición",
+      "riesgo climático"
+    ],
+    "must_mention_facts": [
+      "almendro",
+      "rendimiento decreciente",
+      "variedades tolerantes a sequía"
+    ],
+    "must_actions": [
+      "evaluar estado de árboles",
+      "solicitar presupuesto de replantación",
+      "considerar ayudas CAP"
+    ],
+    "forbidden_claims": [
+      "arrancar inmediatamente"
+    ],
+    "forbidden_overclaim": [
+      "floración protegida contra heladas",
+      "almendro sin riesgo de heladas"
+    ]
+  }
+}

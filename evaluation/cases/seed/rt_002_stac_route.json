@@ -1,0 +1,22 @@
+{
+  "case_id": "rt_002_stac_route",
+  "family": "decision",
+  "difficulty": "medium",
+  "query": "Busca imágenes satelitales de mi parcela en Córdoba para ver el estado del cultivo de olivar.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "olivar",
+    "region": "Córdoba"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": ["búsqueda de escenas satelitales", "interpretación de imágenes NDVI", "limitaciones de resolución y nubosidad"],
+    "must_mention_facts": ["Sentinel-2 proporciona bandas de 10 m útiles para analizar vigor vegetal", "el NDVI es un índice de vigor vegetal", "la nubosidad puede afectar la calidad y comparabilidad de las imágenes"],
+    "must_actions": ["buscar escenas recientes de Sentinel-2 para la zona de Córdoba", "interpretar los valores de NDVI", "indicar limitaciones de las imágenes satelitales"],
+    "must_acknowledge_missing": ["no se ha proporcionado la ubicación exacta de la parcela (coordenadas)", "no se ha indicado la fecha de interés"],
+    "forbidden_claims": ["las imágenes satelitales tienen resolución centimétrica", "el análisis es 100% preciso sin validación"],
+    "forbidden_overclaim": ["precisión exacta sin ambigüedades", "diagnóstico definitivo desde satélite"]
+  },
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe invocar stac_search para buscar escenas Sentinel-2 y luego rs_analyst para interpretar los datos de vigor vegetal.\nAGENTES: El agente stac_search y rs_analyst deben ser invocados por palabras clave 'imágenes satelitales' y 'estado del cultivo'.\nDANGER: Responder sin invocar stac_search o rs_analyst. Dar información genérica sobre teledetección sin buscar datos específicos.\nBONUS: Incluir fechas de adquisición de las escenas, valores de NDVI específicos, o comparación con periodos anteriores.",
+  "expected_route": ["stac", "rs_analyst", "writer"],
+  "routing_assertion": "stac agent must be invoked for satellite imagery queries"
+}

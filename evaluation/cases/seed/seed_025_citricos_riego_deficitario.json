@@ -1,0 +1,41 @@
+{
+  "case_id": "seed_025_citricos_riego_deficitario",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe recomendar estrategias de riego deficitario controlado para cítricos en Murcia.\nAGENTES: Consulta de riego y manejo hídrico.\nDANGER: Recomendar riego deficitario sin considerar la fase fenológica o las condiciones climáticas.\nBONUS: Mencionar los coeficientes de cultivo (Kc), los umbrales de estrés hídrico, o las técnicas de monitorización de la humedad del suelo.",
+  "family": "decision",
+  "difficulty": "hard",
+  "query": "¿Puedo aplicar riego deficitario controlado a mis naranjos en Murcia para ahorrar agua sin perder producción?",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "cítricos",
+    "region": "Murcia"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "riego deficitario controlado como estrategia de ahorro de agua",
+      "identificación de fases sensibles del cultivo de cítricos",
+      "monitorización continua de la humedad del suelo"
+    ],
+    "must_mention_facts": [
+      "el ahorro y el impacto productivo del riego deficitario dependen de la variedad, la fase, la intensidad del déficit y el suelo",
+      "las fases sensibles deben identificarse para la variedad y el ciclo productivo concretos",
+      "los coeficientes de cultivo (Kc) permiten calcular la evapotranspiración real"
+    ],
+    "must_actions": [
+      "instalar sensores de humedad del suelo (tensiómetros o capacitivos)",
+      "definir umbrales de riego por fase fenológica",
+      "evaluar el impacto en calidad y cantidad del fruto"
+    ],
+    "must_acknowledge_missing": [
+      "no se ha indicado la variedad de cítrico",
+      "no se conoce el tipo de suelo y su capacidad de retención de agua"
+    ],
+    "forbidden_claims": [
+      "el riego deficitario no afecta a la producción",
+      "no es necesario monitorizar la humedad del suelo"
+    ],
+    "forbidden_overclaim": [
+      "ahorro de agua sin impacto en producción",
+      "riego deficitario siempre óptimo"
+    ]
+  }
+}

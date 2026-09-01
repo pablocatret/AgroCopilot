@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_024_cereales_avena",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe conocer el cultivo de avena en Lugo (condiciones edafoclimáticas, variedades, manejo agronómico).\nAGENTES: Consulta técnica de cultivo.\nDANGER: Confundir avena con otros cereales o dar recomendaciones no específicas.\nBONUS: Mencionar la importancia de la avena como cubierta vegetal, las variedades forrajeras vs. granarias, o el manejo del nitrógeno en avena.",
+  "family": "decision",
+  "difficulty": "medium",
+  "query": "¿Siembro avena o trigo en mi finca de Lugo? El suelo es ácido y el clima es húmedo. Quiero optimizar el rendimiento.",
+  "context": {
+    "user_role": "agricultor",
+    "crop_type": "cereales",
+    "region": "Lugo"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "adaptación edafoclimática",
+      "rendimiento esperado",
+      "mercado"
+    ],
+    "must_mention_facts": [
+      "avena sativa",
+      "tolerancia a suelos ácidos",
+      "precipitaciones"
+    ],
+    "must_actions": [
+      "analizar pH del suelo",
+      "consultar registros de variedades",
+      "evaluar demanda de mercado"
+    ],
+    "forbidden_claims": [
+      "ambas son iguales"
+    ],
+    "forbidden_overclaim": [
+      "cultivo de avena sin riesgos",
+      "rendimiento de avena garantizado"
+    ]
+  }
+}

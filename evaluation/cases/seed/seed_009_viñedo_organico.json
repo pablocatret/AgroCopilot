@@ -1,0 +1,41 @@
+{
+  "case_id": "seed_009_viñedo_organico",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe explicar el proceso de conversión y certificación ecológica aplicable a un viñedo, con referencia al Reglamento (UE) 2018/848 y a la autoridad u organismo de control competente.\nAGENTES: Consulta de cumplimiento normativo, agente legal probable.\nDANGER: Fijar una duración universal sin comprobar el cultivo, el historial y la autoridad competente, o recomendar productos no autorizados.\nBONUS: Explicar que los cultivos perennes pueden tener un periodo de conversión de hasta tres años antes de la primera cosecha comercial ecológica y que debe confirmarse el calendario aplicable.",
+  "family": "compliance",
+  "difficulty": "medium",
+  "query": "¿Qué necesito para certificar mi viñedo como ecológico? Tengo 8 hectáreas en Priorat y quiero vender como vino ecológico.",
+  "context": {
+    "user_role": "viticultor",
+    "crop_type": "viñedo",
+    "region": "Priorat"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "proceso de conversión a producción ecológica y duración aplicable al cultivo perenne",
+      "productos fitosanitarios autorizados en ecológico",
+      "rol del organismo de control certificador"
+    ],
+    "must_mention_facts": [
+      "el Reglamento (UE) 2018/848 regula la producción ecológica en la UE",
+      "la duración de la conversión debe confirmarse para el viñedo y la primera cosecha comercial ecológica",
+      "solo pueden utilizarse productos y prácticas autorizados por la normativa ecológica aplicable"
+    ],
+    "must_actions": [
+      "inscribirse en el registro de producción ecológica de la comunidad autónoma",
+      "seleccionar y contactar con un organismo de control acreditado",
+      "adaptar el manejo del viñedo a los requisitos ecológicos"
+    ],
+    "must_acknowledge_missing": [
+      "no se ha indicado si la parcela está en periodo de conversión o ya certificada",
+      "no se conoce el historial de tratamientos previos"
+    ],
+    "forbidden_claims": [
+      "la conversión ecológica no tiene requisitos específicos",
+      "cualquier producto es válido en ecológico"
+    ],
+    "forbidden_overclaim": [
+      "conversión ecológica sin pérdidas de producción",
+      "producción ecológica sin restricciones"
+    ]
+  }
+}

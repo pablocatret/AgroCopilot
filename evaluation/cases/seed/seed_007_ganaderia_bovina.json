@@ -1,0 +1,36 @@
+{
+  "case_id": "seed_007_ganaderia_bovina",
+  "judge_rubric_notes": "EVALUACIÓN: El sistema debe suministrar información técnica relevante para la ganadería bovina en Asturias (clima, pastos, normativa ganadera).\nAGENTES: Consulta ganadera general.\nDANGER: Responder con información genérica no aplicable a Asturias o al tipo de ganadería.\nBONUS: Mencionar razas autóctonas asturianas, normativa de bienestar animal, o aprovechamiento de pastos.",
+  "family": "general",
+  "difficulty": "easy",
+  "query": "Tengo una explotación de vacuno de leche con 40 cabezas en Asturias. ¿Cómo mejoro la eficiencia reproductiva?",
+  "context": {
+    "user_role": "ganadero",
+    "crop_type": "ganadería bovina",
+    "region": "Asturias"
+  },
+  "gold_expectations": {
+    "must_contain_concepts": [
+      "control reproductivo",
+      "sincronización de celos",
+      "inseminación artificial"
+    ],
+    "must_mention_facts": [
+      "vacuno lechero",
+      "intervalo entre partos",
+      "tasa de concepción"
+    ],
+    "must_actions": [
+      "registro de celos",
+      "análisis reproductivo",
+      "consulta con veterinario"
+    ],
+    "forbidden_claims": [
+      "solución automática"
+    ],
+    "forbidden_overclaim": [
+      "sin necesidad de vacunación",
+      "producción lechera garantizada"
+    ]
+  }
+}
